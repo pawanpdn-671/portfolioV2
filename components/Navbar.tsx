@@ -1,7 +1,7 @@
-import React from "react";
+"use client";
 
 const Navbar = () => {
-	return <div>Navbar</div>;
+	return <div className="nav">Navbar</div>;
 };
 
 export default Navbar;
