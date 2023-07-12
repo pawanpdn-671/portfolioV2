@@ -25,7 +25,6 @@ module.exports = {
 			},
 			fontFamily: {
 				bodyFont: ["Nunito Sans", "sans-serif"],
-				titleFont: ["Titillium Web", "sans-serif"],
 				gameFont: ["gameFont", "sans-serif"],
 			},
 			boxShadow: {
