@@ -5,9 +5,28 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 const Navbar = () => {
+	const [scrolled, setScrolled] = useState(false);
+
+	const checkScroll = () => {
+		if (window.scrollY === 0) {
+			setScrolled(false);
+		} else setScrolled(true);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", checkScroll);
+		// return window.removeEventListener("scroll", checkScroll);
+	}, [scrolled]);
+
 	return (
-		<div className="w-full shadow-navbarShadow h-20 lg:h-30 sticky top-0 z-50 bg-bodyColor px-6">
-			<div className="max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between">
+		<div
+			className={`sticky w-full ${
+				scrolled ? "h-20 " : "h-24"
+			} h-20 lg:h-30 top-0 z-50 transition-all delay-100 duration-300 ease-in`}>
+			<div
+				className={`max-w-container h-full mx-auto py-1 font-titleFont flex items-center justify-between ${
+					scrolled ? "shadow-navbarShadow" : ""
+				} px-8 rounded-full bg-bodyColor transition-all delay-100 duration-300 ease-in`}>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

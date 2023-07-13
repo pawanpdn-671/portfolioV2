@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className="w-full h-screen bg-bodyColor overflow-x-hidden overflow-y-auto scroll-smooth">
+			<body className="w-full min-h-screen bg-bodyColor overflow-x-hidden overflow-y-auto scroll-smooth">
 				<Navbar />
 				{children}
 				<SocialLink />

@@ -28,7 +28,7 @@ module.exports = {
 				gameFont: ["gameFont", "sans-serif"],
 			},
 			boxShadow: {
-				navbarShadow: "0 10px 30px -10px rgba(2, 12, 27, 0.7)",
+				navbarShadow: "0 3px 25px -2px rgba(2, 12, 27, 0.5)",
 			},
 			colors: {
 				bodyColor: "#0A192F",
