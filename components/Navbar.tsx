@@ -20,10 +20,10 @@ const Navbar = () => {
 					/>
 				</motion.div>
 				<div className="hidden mdl:inline-flex items-center">
-					<ul className="flex text-white">
+					<ul className="flex">
 						<Link
 							href="/"
-							className="px-2 font-semibold mx-4 text-lg">
+							className="px-2 font-semibold mx-4 text-lg text-textDark navLink">
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -33,7 +33,7 @@ const Navbar = () => {
 						</Link>
 						<Link
 							href="/projects"
-							className="px-2 font-semibold mx-4 text-lg">
+							className="px-2 font-semibold mx-4 text-lg text-textDark navLink">
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -43,7 +43,7 @@ const Navbar = () => {
 						</Link>
 						<Link
 							href="/about"
-							className="px-2 font-semibold mx-4 text-lg">
+							className="px-2 font-semibold mx-4 text-lg text-textDark navLink">
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -53,7 +53,7 @@ const Navbar = () => {
 						</Link>
 						<Link
 							href="/games"
-							className="font-semibold px-2 mx-4 text-lg">
+							className="font-semibold px-2 mx-4 text-lg text-textDark navLink">
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -63,7 +63,7 @@ const Navbar = () => {
 						</Link>
 						<Link
 							href="/tools"
-							className="px-2 font-semibold mx-4 text-lg">
+							className="px-2 font-semibold mx-4 text-lg text-textDark navLink">
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -81,6 +81,11 @@ const Navbar = () => {
 							{"<Resume />"}
 						</motion.button>
 					</a>
+				</div>
+				<div className="w-8 h-5 flex flex-col justify-between items-center mdl:hidden text-textGreen cursor-pointer overflow-hidden group">
+					<span className="w-full h-[2px] bg-textGreen inline-flex transform group-hover:translate-x-2 transition-all ease-in-out duration-300"></span>
+					<span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-3 group-hover:translate-x-0 transition-all ease-in-out duration-300"></span>
+					<span className="w-full h-[2px] bg-textGreen inline-flex transform translate-x-1 group-hover:translate-x-3 transition-all ease-in-out duration-300"></span>
 				</div>
 			</div>
 		</div>

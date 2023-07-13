@@ -2,6 +2,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import "styles/globals.css";
 import { Metadata } from "next";
+import SocialLink from "@/components/SocialLink";
 
 export const metadata: Metadata = {
 	title: "PawanPdn",
@@ -19,9 +20,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body>
+			<body className="w-full h-screen bg-bodyColor overflow-x-hidden overflow-y-auto scroll-smooth">
 				<Navbar />
 				{children}
+				<SocialLink />
 				<Footer />
 			</body>
 		</html>

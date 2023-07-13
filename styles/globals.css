@@ -8,3 +8,30 @@
 	font-family: "gameFont";
 	src: url("/font/GAMERIA.ttf");
 }
+
+.navLink li {
+	position: relative;
+	padding: 3px 0;
+}
+.navLink li:hover::after {
+	display: block;
+}
+.navLink li::after {
+	display: none;
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 2px;
+	background-color: #64ffda;
+	bottom: 0;
+	left: 0;
+	animation: navAnimate 0.2s linear forwards;
+}
+@keyframes navAnimate {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 100%;
+	}
+}
