@@ -26,6 +26,7 @@ module.exports = {
 			fontFamily: {
 				bodyFont: ["Nunito Sans", "sans-serif"],
 				gameFont: ["gameFont", "sans-serif"],
+				titleFont: ["League Spartan", "sans-serif"],
 			},
 			boxShadow: {
 				navbarShadow: "0 3px 25px -2px rgba(2, 12, 27, 0.5)",
