@@ -14,7 +14,7 @@ export default function Home() {
 				</motion.h4>
 				<div className="mt-7 text-textLight">
 					<div className="flex flex-col">
-						<div className="flex">
+						<div className="flex flex-wrap gap-3">
 							<motion.h1
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -26,11 +26,11 @@ export default function Home() {
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 0.8 }}
-								className="ml-4 lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
+								className="lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
 								Learning
 							</motion.h1>
 						</div>
-						<div className="flex mt-2 lgl:mt-4">
+						<div className="flex mt-2 lgl:mt-4 gap-3 flex-wrap">
 							<motion.h1
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
@@ -42,7 +42,7 @@ export default function Home() {
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 1 }}
-								className="ml-4 lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
+								className="lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
 								Developing
 							</motion.h1>
 						</div>
@@ -51,8 +51,8 @@ export default function Home() {
 						initial={{ y: -10, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.5, delay: 1.1 }}
-						className="mt-3 lgl:mt-6 text-3xl lgl:text-7xl flex items-center font-bold">
-						<span className="h-[3px] lgl:h-[5px] bg-textDark w-[50px] lgl:w-[80px] mr-8"></span>
+						className="mt-3 lgl:mt-6 text-3xl lgl:text-7xl flex font-bold">
+						<span className="h-[3px] mt-4 lgl:mt-9 lgl:h-[5px] bg-textDark w-[30px] lgl:w-[80px] mr-4 lgl:mr-8"></span>
 						Things for the Web
 					</motion.p>
 					<a
