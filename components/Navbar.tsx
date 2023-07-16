@@ -20,11 +20,13 @@ const Navbar = () => {
 	return (
 		<div
 			className={`fixed w-full ${
-				scrolled ? "h-20 " : "h-24"
-			} h-20 lg:h-30 top-0 z-50 transition-all delay-100 duration-300 ease-in`}>
+				scrolled ? "h-20 lg:px-5" : "h-24"
+			} top-0 z-50 transition-all delay-100 duration-300 ease-in`}>
 			<div
-				className={`max-w-container h-full mx-auto py-1 flex items-center justify-between ${
-					scrolled ? "shadow-navbarShadow px-8 rounded-full" : ""
+				className={`max-w-container h-full mx-auto flex px-5 items-center justify-between ${
+					scrolled
+						? "shadow-navbarShadow lg:px-8 lg:rounded-full"
+						: ""
 				} bg-bodyColor transition-all delay-100 duration-300 ease-in`}>
 				<motion.div
 					initial={{ opacity: 0 }}
