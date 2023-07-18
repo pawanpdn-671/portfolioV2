@@ -29,7 +29,7 @@ module.exports = {
 				titleFont: ["League Spartan", "sans-serif"],
 			},
 			boxShadow: {
-				navbarShadow: "0 3px 25px -2px rgba(2, 12, 27, 0.5)",
+				navbarShadow: "0 2px 20px 2px rgba(2, 12, 27, 0.45)",
 			},
 			colors: {
 				bodyColor: "#0A192F",
@@ -37,6 +37,7 @@ module.exports = {
 				textLight: "#ccd6f6",
 				textDark: "#8892b0",
 				hoverColor: "rgba(100, 255, 218, 0.1)",
+				secondColor: "#081324",
 			},
 		},
 	},

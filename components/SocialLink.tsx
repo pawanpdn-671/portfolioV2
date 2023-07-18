@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const SocialLink = () => {
 	return (
-		<div className="hidden h-screen justify-end items-center xl:flex fixed flex-col bottom-0 right-[20px] text-textLight gap-4 z-50">
+		<div className="hidden h-screen justify-end items-center mdl:flex fixed flex-col bottom-0 right-[20px] text-textLight gap-4 z-50">
 			<div className="flex flex-col gap-4">
 				<motion.a
 					initial={{ y: -10, opacity: 0 }}

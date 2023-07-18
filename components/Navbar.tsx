@@ -32,9 +32,9 @@ const Navbar = () => {
 			<div
 				className={`max-w-container h-full mx-auto flex px-5 items-center justify-between ${
 					scrolled
-						? "shadow-navbarShadow lg:px-8 lg:rounded-full"
+						? "shadow-navbarShadow lg:px-20 lg:rounded-full"
 						: ""
-				} bg-bodyColor transition-all delay-100 duration-300 ease-in`}>
+				} bg-bodyColor transition-all delay-100 duration-200 lg:delay-100 lg:duration-700 ease-in-out`}>
 				<motion.div
 					initial={{ opacity: 0 }}
 					animate={{ opacity: 1 }}

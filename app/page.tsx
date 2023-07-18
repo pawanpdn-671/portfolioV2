@@ -1,11 +1,12 @@
 "use client";
 import Experience from "@/components/Experience";
+import Footer from "@/components/Footer";
 import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
 
 export default function Home() {
 	return (
-		<main className="max-w-container mx-auto px-5">
+		<main className="max-w-container mx-auto px-5 mdl:px-20">
 			<div className="min-h-screen flex flex-col justify-center">
 				<motion.h4
 					initial={{ y: -10, opacity: 0 }}
@@ -59,7 +60,7 @@ export default function Home() {
 					</motion.p>
 					<a
 						href="/"
-						className="mt-6 lgl:mt-10 block"
+						className="mt-6 lgl:mt-10 block w-max"
 						target="_blank">
 						<motion.button
 							initial={{ x: -30, opacity: 0 }}
@@ -72,8 +73,8 @@ export default function Home() {
 				</div>
 			</div>
 
-			<div className="max-w-container mx-auto py-10 lgl:py-24 px-4">
-				<TitleBox title={"Working Journey"} />
+			<div className="max-w-container mx-auto py-10 lgl:py-24">
+				<TitleBox title={"Work Experience"} />
 				<Experience />
 			</div>
 		</main>
