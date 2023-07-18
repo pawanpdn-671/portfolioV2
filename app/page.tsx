@@ -1,4 +1,6 @@
 "use client";
+import Experience from "@/components/Experience";
+import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -68,6 +70,11 @@ export default function Home() {
 						</motion.button>
 					</a>
 				</div>
+			</div>
+
+			<div className="max-w-container mx-auto py-10 lgl:py-24 px-4">
+				<TitleBox title={"Working Journey"} />
+				<Experience />
 			</div>
 		</main>
 	);

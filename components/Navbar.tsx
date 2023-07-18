@@ -138,7 +138,7 @@ const Navbar = () => {
 							onClick={(e) => e.stopPropagation()}
 							initial={{ x: 50, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 0.5 }}
+							transition={{ duration: 0.3 }}
 							className="w-[80%] h-full overflow-y-auto bg-[#112240] px-4 py-10 relative">
 							<MdOutlineClose
 								onClick={() => setShowMobileMenu(false)}
