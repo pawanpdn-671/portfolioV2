@@ -5,3 +5,8 @@ export interface CompanyDetails {
 	endDate: string;
 	desc: Array<any>;
 }
+
+export interface ButtonProps {
+	text: string;
+	style: string;
+}

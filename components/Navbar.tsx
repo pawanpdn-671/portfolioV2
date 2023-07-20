@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { MdOutlineClose } from "react-icons/md";
 import { AiOutlineGithub, AiOutlineInstagram } from "react-icons/ai";
 import { BiLogoLinkedin } from "react-icons/bi";
+import Button from "./Button";
 
 const Navbar = () => {
 	const [scrolled, setScrolled] = useState(false);
@@ -114,13 +115,13 @@ const Navbar = () => {
 						</Link>
 					</ul>
 					<a href="/assets/resume/resume-1.pdf" target="_blank">
-						<motion.button
+						<motion.span
+							className="ml-2"
 							initial={{ y: -10, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
-							transition={{ duration: 0.1, delay: 0.6 }}
-							className="px-4 py-2 ml-2 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300">
-							{"<Resume />"}
-						</motion.button>
+							transition={{ duration: 0.1, delay: 0.6 }}>
+							<Button text="Resume" style="" />
+						</motion.span>
 					</a>
 				</div>
 				<div
@@ -232,16 +233,15 @@ const Navbar = () => {
 									<a
 										href="/assets/resume/resume-1.pdf"
 										target="_blank">
-										<motion.button
+										<motion.span
 											initial={{ y: -10, opacity: 0 }}
 											animate={{ y: 0, opacity: 1 }}
 											transition={{
 												duration: 0.1,
 												delay: 0.6,
-											}}
-											className="px-3 py-1 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300">
-											{"<Resume />"}
-										</motion.button>
+											}}>
+											<Button text="Resume" style="" />
+										</motion.span>
 									</a>
 								</ul>
 

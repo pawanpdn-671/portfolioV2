@@ -1,4 +1,5 @@
 "use client";
+import ContactPage from "@/components/Contact";
 import Experience from "@/components/Experience";
 import Footer from "@/components/Footer";
 import TitleBox from "@/components/TitleBox";
@@ -76,6 +77,10 @@ export default function Home() {
 			<div className="max-w-container mx-auto py-10 lgl:py-24">
 				<TitleBox title={"Work Experience"} />
 				<Experience />
+			</div>
+			<div className="py-10 lgl:py-24">
+				<TitleBox title={"Get in Touch"} />
+				<ContactPage />
 			</div>
 		</main>
 	);
