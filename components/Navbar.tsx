@@ -27,25 +27,15 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`fixed w-full ${
+			className={`sticky w-full ${
 				scrolled ? "h-20 lg:px-5" : "h-24"
 			} top-0 z-50 transition-all delay-100 duration-300 ease-in`}>
 			<div
 				className={`max-w-container h-full mx-auto flex px-5 items-center justify-between ${
-					scrolled
-						? "shadow-navbarShadow lg:px-20 lg:rounded-full"
-						: ""
+					scrolled ? "shadow-navbarShadow lg:px-20 lg:rounded-full" : ""
 				} bg-bodyColor transition-all delay-100 duration-200 lg:delay-100 lg:duration-700 ease-in-out`}>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.5 }}>
-					<Image
-						src="/assets/images/light-logo.png"
-						alt="logo"
-						width={100}
-						height={50}
-					/>
+				<motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+					<Image src="/assets/images/light-logo.png" alt="logo" width={100} height={50} />
 				</motion.div>
 				<div className="hidden mdl:inline-flex items-center">
 					<ul className="flex">
@@ -88,9 +78,7 @@ const Navbar = () => {
 						<Link
 							href="/games"
 							className={`font-semibold px-2 mx-4 text-lg text-textDark navLink ${
-								pathname.includes("/games")
-									? "active-link"
-									: ""
+								pathname.includes("/games") ? "active-link" : ""
 							}`}>
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
@@ -102,9 +90,7 @@ const Navbar = () => {
 						<Link
 							href="/tools"
 							className={`px-2 font-semibold mx-4 text-lg text-textDark navLink ${
-								pathname.includes("/tools")
-									? "active-link"
-									: ""
+								pathname.includes("/tools") ? "active-link" : ""
 							}`}>
 							<motion.li
 								initial={{ y: -10, opacity: 0 }}
@@ -165,9 +151,7 @@ const Navbar = () => {
 									<Link
 										href="/projects"
 										className={`font-semibold text-lg text-textDark navLink ${
-											pathname === "/projects"
-												? "active-link"
-												: ""
+											pathname === "/projects" ? "active-link" : ""
 										}`}>
 										<motion.li
 											initial={{ y: -10, opacity: 0 }}
@@ -182,9 +166,7 @@ const Navbar = () => {
 									<Link
 										href="/about"
 										className={`font-semibold text-lg text-textDark navLink ${
-											pathname === "/about"
-												? "active-link"
-												: ""
+											pathname === "/about" ? "active-link" : ""
 										}`}>
 										<motion.li
 											initial={{ y: -10, opacity: 0 }}
@@ -199,9 +181,7 @@ const Navbar = () => {
 									<Link
 										href="/games"
 										className={`font-semibold text-lg text-textDark navLink ${
-											pathname.includes("/games")
-												? "active-link"
-												: ""
+											pathname.includes("/games") ? "active-link" : ""
 										}`}>
 										<motion.li
 											initial={{ y: -10, opacity: 0 }}
@@ -216,9 +196,7 @@ const Navbar = () => {
 									<Link
 										href="/tools"
 										className={`font-semibold text-lg text-textDark navLink ${
-											pathname.includes("/tools")
-												? "active-link"
-												: ""
+											pathname.includes("/tools") ? "active-link" : ""
 										}`}>
 										<motion.li
 											initial={{ y: -10, opacity: 0 }}
@@ -230,9 +208,7 @@ const Navbar = () => {
 											Tools
 										</motion.li>
 									</Link>
-									<a
-										href="/assets/resume/resume-1.pdf"
-										target="_blank">
+									<a href="/assets/resume/resume-1.pdf" target="_blank">
 										<motion.span
 											initial={{ y: -10, opacity: 0 }}
 											animate={{ y: 0, opacity: 1 }}

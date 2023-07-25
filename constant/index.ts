@@ -32,3 +32,30 @@ export const experiences = [
 		],
 	},
 ];
+
+export const projects = [
+	{
+		name: "CodeOn",
+		techUsed: [""],
+		deployLink: "",
+		codeLink: "",
+	},
+	{
+		name: "VroomVibe",
+		techUsed: [""],
+		deployLink: "",
+		codeLink: "",
+	},
+	{
+		name: "PromptsWorld",
+		techUsed: [""],
+		deployLink: "",
+		codeLink: "",
+	},
+	{
+		name: "CodeOn",
+		techUsed: [""],
+		deployLink: "",
+		codeLink: "",
+	},
+];
