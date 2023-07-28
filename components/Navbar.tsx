@@ -27,7 +27,7 @@ const Navbar = () => {
 
 	return (
 		<div
-			className={`sticky w-full ${
+			className={`fixed w-full ${
 				scrolled ? "h-20 lg:px-5" : "h-24"
 			} top-0 z-50 transition-all delay-100 duration-300 ease-in`}>
 			<div

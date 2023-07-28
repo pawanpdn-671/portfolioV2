@@ -59,3 +59,8 @@ export const projects = [
 		codeLink: "",
 	},
 ];
+
+export const about = {
+	title: "Passionately Evolving Code.",
+	desc: "Hi Viewers! My name is Pawan Pradhan. I currently live in East Siang District, Arunachal Pradesh, India. I have studied till my high school, and shortly after that I decided to spend all of my time in Web Development. I started my journey with C programming language as my base, and it really helped me throughout learning Javascript. I'm still on my way to be a great software engineer. My hobbies includes Playing Online Games, Watching Videos and sometimes Badminton. And so that's all about me in a nutshell.",
+};

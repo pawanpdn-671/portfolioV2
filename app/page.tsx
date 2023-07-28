@@ -59,10 +59,7 @@ export default function Home() {
 						<span className="h-[3px] mt-4 lgl:mt-9 lgl:h-[5px] bg-textDark w-[30px] lgl:w-[80px] mr-4 lgl:mr-8"></span>
 						Things for the Web
 					</motion.p>
-					<a
-						href="/"
-						className="mt-6 lgl:mt-10 block w-max"
-						target="_blank">
+					<a href="/" className="mt-6 lgl:mt-10 block w-max" target="_blank">
 						<motion.button
 							initial={{ x: -30, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
