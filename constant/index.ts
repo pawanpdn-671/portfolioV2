@@ -36,7 +36,8 @@ export const experiences = [
 export const projects = [
 	{
 		name: "CodeOn",
-		techUsed: [""],
+		techUsed: ["NextJS, Firebase, Tailwindcss"],
+		desc: "A competitive programming platform, where the user can practice coding for interviews. The user needs to sign in to save the progress. The solutions are also being provided in the form of video.",
 		deployLink: "",
 		codeLink: "",
 	},
