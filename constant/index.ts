@@ -36,26 +36,47 @@ export const experiences = [
 export const projects = [
 	{
 		name: "CodeOn",
-		techUsed: ["NextJS, Firebase, Tailwindcss"],
+		techUsed: ["NextJS", "Firebase", "Tailwindcss"],
 		desc: "A competitive programming platform, where the user can practice coding for interviews. The user needs to sign in to save the progress. The solutions are also being provided in the form of video.",
-		deployLink: "",
-		codeLink: "",
+		deployLink: "fdsfd",
+		codeLink: "fdsfd",
 	},
 	{
 		name: "VroomVibe",
-		techUsed: [""],
-		deployLink: "",
-		codeLink: "",
+		techUsed: ["NextJS"],
+		desc: "dffd",
+		deployLink: "fdsf",
+		codeLink: "fdsfd",
 	},
 	{
 		name: "PromptsWorld",
-		techUsed: [""],
+		techUsed: ["NextJS"],
+		desc: "fdsf",
+		deployLink: "dfdf",
+		codeLink: "fdsfd",
+	},
+	{
+		name: "CodeOn",
+		techUsed: ["NextJS"],
+		desc: "fdsd",
+		deployLink: "fdsf",
+		codeLink: "fdsfd",
+	},
+];
+
+export const otherProjects = [
+	{
+		name: "Weather App",
 		deployLink: "",
 		codeLink: "",
 	},
 	{
-		name: "CodeOn",
-		techUsed: [""],
+		name: "fdfd",
+		deployLink: "",
+		codeLink: "",
+	},
+	{
+		name: "fdfdfd",
 		deployLink: "",
 		codeLink: "",
 	},

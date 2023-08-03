@@ -1,7 +1,6 @@
 "use client";
 import ContactPage from "@/components/Contact";
 import Experience from "@/components/Experience";
-import Footer from "@/components/Footer";
 import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
 

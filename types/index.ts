@@ -10,3 +10,16 @@ export interface ButtonProps {
 	text: string;
 	style: string;
 }
+
+export interface ProjectCardProps {
+	name: string;
+	techUsed: Array<any>;
+	desc: string;
+	deployLink: string;
+	codeLink: string;
+}
+
+export interface ProjectProps {
+	key: number;
+	project: ProjectCardProps;
+}
