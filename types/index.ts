@@ -3,7 +3,7 @@ export interface CompanyDetails {
 	role: string;
 	startDate: string;
 	endDate: string;
-	desc: Array<any>;
+	desc: Array<string>;
 }
 
 export interface ButtonProps {

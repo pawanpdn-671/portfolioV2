@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import "styles/globals.css";
 import { Metadata } from "next";
 import SocialLink from "@/components/SocialLink";
+import ThemeProvider from "@/utils/Context";
 
 export const metadata: Metadata = {
 	title: "PawanPdn",
@@ -13,18 +14,16 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({
-	children,
-}: {
-	children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body className="w-full bg-bodyColor overflow-x-hidden overflow-y-auto scroll-smooth font-bodyFont">
-				<Navbar />
-				{children}
-				<SocialLink />
-				<Footer />
+				<ThemeProvider>
+					<Navbar />
+					{children}
+					<SocialLink />
+					<Footer />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

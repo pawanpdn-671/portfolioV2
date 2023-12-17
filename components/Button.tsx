@@ -6,7 +6,7 @@ const Button = ({ text, style }: ButtonProps) => {
 		<button
 			className={`${
 				style ? style : "px-4 py-2"
-			} " rounded-md text-textGreen border border-textGreen hover:bg-hoverColor duration-300"`}>
+			} " rounded-md text-textGreen border border-textGreen hover:bg-hoverColor/10 duration-300"`}>
 			{`<${text} />`}
 		</button>
 	);

@@ -63,7 +63,7 @@ export default function Home() {
 							initial={{ x: -30, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
 							transition={{ duration: 0.2, delay: 1.2 }}
-							className="px-4 py-2 rounded-md text-textGreen text-[16px] lgl:text-[20px] border border-textGreen hover:bg-hoverColor duration-300">
+							className="px-4 py-2 rounded-md text-textGreen text-[16px] lgl:text-[20px] border border-textGreen hover:bg-hoverColor/10 duration-300">
 							{"<CheckoutProjects />"}
 						</motion.button>
 					</a>

@@ -7,8 +7,7 @@ import { CompanyDetails } from "@/types";
 
 const Experience = () => {
 	const [tabIndex, setTabIndex] = useState(0);
-	const [tabDetails, setTabDetails] =
-		useState<CompanyDetails>(Object);
+	const [tabDetails, setTabDetails] = useState<CompanyDetails>(Object);
 
 	useEffect(() => {
 		setTabDetails(experiences[tabIndex]);
@@ -21,10 +20,8 @@ const Experience = () => {
 					<li
 						key={i}
 						className={`border-l-2 ${
-							tabIndex === i
-								? "border-l-textGreen"
-								: "border-l-hoverColor"
-						} text-textDark bg-transparent hover:bg-[#112240] py-3 text-md cursor-pointer duration-300 px-8`}
+							tabIndex === i ? "border-l-textGreen" : "border-l-hoverColor/10"
+						} text-textDark bg-transparent hover:bg-secondColor py-3 text-md cursor-pointer duration-300 px-8`}
 						onClick={() => setTabIndex(i)}>
 						{exp.company}
 					</li>
@@ -38,18 +35,14 @@ const Experience = () => {
 					className="w-full">
 					<h3 className="text-xl font-semibold text-textLight">
 						{tabDetails.role}
-						<span className="text-textGreen tracking-wide">
-							@{tabDetails.company}
-						</span>
+						<span className="text-textGreen tracking-wide">@{tabDetails.company}</span>
 					</h3>
 					<p className="text-sm mt-1 font-medium text-textDark">
 						{tabDetails.startDate} - {tabDetails.endDate}
 					</p>
 					<ul className="text-textLight mt-4 gap-2">
 						{tabDetails.desc?.map((item, i) => (
-							<li
-								key={i}
-								className="text-base flex gap-2 text-textDark mt-2">
+							<li key={i} className="text-base flex gap-2 text-textDark mt-2">
 								<span className="text-textGreen mt-1">
 									<TiArrowForward />
 								</span>

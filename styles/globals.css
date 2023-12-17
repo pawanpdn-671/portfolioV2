@@ -9,6 +9,30 @@
 	src: url("/font/GAMERIA.ttf");
 }
 
+.dark-theme {
+	--body-color: 10, 25, 47;
+	--button-color: 100, 255, 218;
+	--text-color: 204, 214, 246;
+	--text-dark: 136, 146, 176;
+	--hover-bg-color: 100, 255, 218;
+	--secondary-color: 8, 19, 36;
+	--navbar-shadow: 0 2px 20px 2px rgba(2, 12, 27, 0.45);
+}
+
+.light-theme {
+	--body-color: 252, 252, 252;
+	--button-color: 42, 43, 43;
+	--text-color: 26, 26, 26;
+	--text-dark: 66, 66, 66;
+	--hover-bg-color: 42, 43, 43;
+	--secondary-color: 224, 224, 224;
+	--navbar-shadow: 0 2px 12px 2px rgba(2, 12, 27, 0.116);
+}
+
+* {
+	transition: color 0.2s linear;
+}
+
 .navLink li {
 	position: relative;
 	padding: 3px 0;
@@ -22,7 +46,6 @@
 	position: absolute;
 	width: 0;
 	height: 2px;
-	background-color: #64ffda;
 	bottom: 0;
 	left: 0;
 	animation: navAnimate 0.2s linear forwards;
@@ -42,7 +65,28 @@
 	position: absolute;
 	width: 0;
 	height: 2px;
-	background-color: #64ffda;
 	bottom: 0;
 	left: 0;
+}
+
+.nav-container {
+	transition-property: padding, height;
+	transition-duration: 300ms;
+	transition-timing-function: ease-in;
+	transition-delay: 100ms;
+}
+.transition-navbar {
+	transition-property: padding, height;
+	transition-duration: 200ms;
+	transition-timing-function: ease-in-out;
+	transition-delay: 100ms;
+}
+
+@media screen and (min-width: 960px) {
+	.transition-navbar {
+		transition-property: padding, height;
+		transition-duration: 700ms;
+		transition-timing-function: ease-in-out;
+		transition-delay: 100ms;
+	}
 }

@@ -9,10 +9,10 @@ const ProjectCard = ({ project }: ProjectProps) => {
 			<div className="flex items-center justify-between">
 				<span className="text-xl font-semibold">{project.name}</span>
 				<div className="flex items-center gap-4 text-2xl">
-					<a href="#" target="_blank">
+					<a href={project.deployLink} target="_blank">
 						<MdOpenInNew className="cursor-pointer hover:text-textGreen duration-300 ease-in-out transition-colors" />
 					</a>
-					<a href="#" target="_blank">
+					<a href={project.codeLink} target="_blank">
 						<BsFileEarmarkCode className="cursor-pointer hover:text-textGreen duration-300 ease-in-out transition-colors" />
 					</a>
 				</div>
@@ -22,7 +22,7 @@ const ProjectCard = ({ project }: ProjectProps) => {
 			</div>
 			<div className="mt-6 flex flex-wrap gap-4">
 				{project.techUsed.map((tech, i) => (
-					<span key={i} className="bg-hoverColor py-1 px-3 text-sm rounded-md">
+					<span key={i} className="bg-hoverColor/10 py-1 px-3 text-sm rounded-md">
 						{tech}
 					</span>
 				))}

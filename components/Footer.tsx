@@ -12,7 +12,7 @@ const Footer = () => {
 					<div className="support-box text-textGreen">
 						<a
 							href="https://www.buymeacoffee.com/pawanpradhan"
-							className="px-3 py-2 flex items-center text-sm border border-textGreen rounded-md hover:bg-hoverColor duration-200 ease">
+							className="px-3 py-2 flex items-center text-sm border border-textGreen rounded-md hover:bg-hoverColor/10 duration-200 ease">
 							{"<"}
 							Buy me a coffee{"/>"}
 						</a>
