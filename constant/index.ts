@@ -105,6 +105,18 @@ export const about = {
 	desc: "Hi Viewers! My name is Pawan Pradhan. I currently live in East Siang District, Arunachal Pradesh, India. I have studied till my high school, and shortly after that I decided to spend all of my time in Web Development. I started my journey with C programming language as my base, and it really helped me throughout learning Javascript. I'm still on my way to be a great software engineer. My hobbies includes Playing Online Games, Watching Videos and sometimes Badminton. And so that's all about me in a nutshell.",
 };
 
+export const tools = [
+	{
+		name: "ImageGen",
+		href: "/tools/imageGen",
+		desc: "ImageGen is a great tool for image generation, powered by AI. Similar to the Midjourney/Dall-e project, it generates images based on text input.",
+	},
+	{
+		name: "ImageGen",
+		href: "/tools/imageGen",
+	},
+];
+
 export const surpriseMePrompts = [
 	"an armchair in the shape of an avocado",
 	"a surrealist dream-like oil painting by Salvador Dalí of a cat playing checkers",

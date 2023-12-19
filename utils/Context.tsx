@@ -1,28 +1,57 @@
 "use client";
 
-import React, { createContext, ReactNode, useState } from "react";
+import React, { createContext, ReactNode, useState, useEffect } from "react";
 
-interface ThemeContextProps {
+interface AppContextProps {
 	theme: string;
 	setTheme: React.Dispatch<React.SetStateAction<string>>;
+	scrolled: boolean;
 }
 
-export const ThemeContext = createContext<ThemeContextProps>({
-	theme: "dark-theme",
+export const AppContext = createContext<AppContextProps>({
+	theme: "",
 	setTheme: () => {},
+	scrolled: false,
 });
 
-interface ThemeProviderProps {
+interface AppProviderProps {
 	children: ReactNode;
 }
 
-function ThemeProvider({ children }: ThemeProviderProps) {
-	const [theme, setTheme] = useState<string>(() => {
-		const storedMode = localStorage.getItem("portfolio-theme");
-		return storedMode ? JSON.parse(storedMode) : "dark-theme";
-	});
+function AppProvider({ children }: AppProviderProps) {
+	const [theme, setTheme] = useState<string>("");
+	const [scrolled, setScrolled] = useState<boolean>(false);
 
-	return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const storedMode = localStorage.getItem("portfolio-theme");
+			if (storedMode) {
+				setTheme(JSON.parse(storedMode));
+			} else {
+				setTheme("dark-theme");
+			}
+		}
+	}, []);
+
+	useEffect(() => {
+		if (typeof window !== "undefined" && theme) {
+			document.body.classList.remove("dark-theme", "light-theme");
+			document.body.classList.add(theme);
+			localStorage.setItem("portfolio-theme", JSON.stringify(theme));
+		}
+	}, [theme]);
+
+	const checkScroll = () => {
+		if (window.scrollY === 0) {
+			setScrolled(false);
+		} else setScrolled(true);
+	};
+
+	useEffect(() => {
+		window.addEventListener("scroll", checkScroll);
+	}, [scrolled]);
+
+	return <AppContext.Provider value={{ theme, setTheme, scrolled }}>{children}</AppContext.Provider>;
 }
 
-export default ThemeProvider;
+export default AppProvider;

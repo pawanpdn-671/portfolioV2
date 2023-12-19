@@ -1,12 +1,13 @@
 "use client";
 import ContactPage from "@/components/Contact";
 import Experience from "@/components/Experience";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
 
 export default function Home() {
 	return (
-		<main className="max-w-container mx-auto px-5 mdl:px-20">
+		<MaxWidthWrapper>
 			<div className="min-h-screen flex flex-col justify-center">
 				<motion.h4
 					initial={{ y: -10, opacity: 0 }}
@@ -78,6 +79,6 @@ export default function Home() {
 				<TitleBox title={"Get in Touch"} />
 				<ContactPage />
 			</div>
-		</main>
+		</MaxWidthWrapper>
 	);
 }

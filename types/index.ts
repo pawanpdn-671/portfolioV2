@@ -8,7 +8,7 @@ export interface CompanyDetails {
 
 export interface ButtonProps {
 	text: string;
-	style: string;
+	style?: string;
 }
 
 export interface ProjectCardProps {
