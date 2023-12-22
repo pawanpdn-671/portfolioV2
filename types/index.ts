@@ -9,6 +9,7 @@ export interface CompanyDetails {
 export interface ButtonProps {
 	text: string;
 	style?: string;
+	onClick?: () => void;
 }
 
 export interface ProjectCardProps {
@@ -22,4 +23,15 @@ export interface ProjectCardProps {
 export interface ProjectProps {
 	key: number;
 	project: ProjectCardProps;
+}
+
+export interface InputFieldProps {
+	labelName: string;
+	type: string;
+	name: string;
+	placeholder: string;
+	value: string;
+	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	isSurpriseMe?: boolean;
+	handleSurpriseMe?: () => void;
 }

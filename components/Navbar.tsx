@@ -56,6 +56,13 @@ const Navbar = () => {
 	const { theme, scrolled } = appContext;
 
 	const pathname = usePathname();
+	const hideNav = pathname.startsWith("/tools") && pathname !== "/tools";
+	const hideNav2 = pathname.startsWith("/games") && pathname !== "/games";
+
+	if (hideNav || hideNav2) {
+		console.log(hideNav, hideNav2);
+		return null;
+	}
 
 	return (
 		<div className={`fixed w-full bg-transparent ${scrolled ? "h-[72px]" : "h-[84px]"} top-0 z-50 nav-container`}>

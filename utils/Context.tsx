@@ -6,12 +6,16 @@ interface AppContextProps {
 	theme: string;
 	setTheme: React.Dispatch<React.SetStateAction<string>>;
 	scrolled: boolean;
+	loading: boolean;
+	setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const AppContext = createContext<AppContextProps>({
 	theme: "",
 	setTheme: () => {},
 	scrolled: false,
+	loading: false,
+	setLoading: () => {},
 });
 
 interface AppProviderProps {
@@ -21,6 +25,7 @@ interface AppProviderProps {
 function AppProvider({ children }: AppProviderProps) {
 	const [theme, setTheme] = useState<string>("");
 	const [scrolled, setScrolled] = useState<boolean>(false);
+	const [loading, setLoading] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -51,7 +56,9 @@ function AppProvider({ children }: AppProviderProps) {
 		window.addEventListener("scroll", checkScroll);
 	}, [scrolled]);
 
-	return <AppContext.Provider value={{ theme, setTheme, scrolled }}>{children}</AppContext.Provider>;
+	return (
+		<AppContext.Provider value={{ theme, setTheme, scrolled, loading, setLoading }}>{children}</AppContext.Provider>
+	);
 }
 
 export default AppProvider;

@@ -6,13 +6,13 @@ module.exports = {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
-		maxWidth: {
-			container: "1440px",
-			contentContainer: "1140px",
-			containerSmall: "1024px",
-			containerxs: "768px",
-		},
 		extend: {
+			maxWidth: {
+				container: "1440px",
+				contentContainer: "1140px",
+				containerSmall: "1024px",
+				containerxs: "768px",
+			},
 			screens: {
 				xs: "320px",
 				sm: "375px",
