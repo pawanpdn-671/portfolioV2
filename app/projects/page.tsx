@@ -14,7 +14,7 @@ const page = () => {
 				<SpaceTop />
 				<div className="mt-20"></div>
 				<div className="mt-10">
-					<div className="">
+					<div>
 						<AnimatedText
 							text="Projects developed along the way..."
 							className="font-titleFont font-bold !text-6xl !text-left"

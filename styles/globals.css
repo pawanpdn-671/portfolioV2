@@ -8,6 +8,10 @@
 	font-family: "gameFont";
 	src: url("/font/GAMERIA.ttf");
 }
+:root {
+	--timing: 500ms;
+	--rotate: 20deg;
+}
 
 .dark-theme {
 	--body-color: 10, 25, 47;
@@ -31,6 +35,10 @@
 
 * {
 	transition: color 0.2s linear;
+}
+
+body {
+	perspective: 1000px;
 }
 
 .navLink li {
@@ -80,6 +88,107 @@
 	transition-duration: 200ms;
 	transition-timing-function: ease-in-out;
 	transition-delay: 100ms;
+}
+
+.custom-game-card-hover {
+	position: relative;
+	width: 280px;
+	aspect-ratio: 9/13;
+	transition: rotate var(--timing) ease;
+	transform-style: preserve-3d;
+	border-radius: 5px;
+	margin: auto;
+}
+
+.custom-game-card-hover .custom-thumb {
+	object-fit: cover;
+	object-position: center;
+	position: absolute;
+	height: 100%;
+	z-index: 10;
+	border-radius: 5px;
+}
+.custom-game-card-hover::after {
+	content: "";
+	position: absolute;
+	inset: 80% 0.5rem 0.5rem;
+	background-color: rgba(0, 0, 0, 0.384);
+	translate: 0;
+	transform: translateZ(-100px);
+	z-index: 1;
+	filter: blur(1rem);
+	border-radius: 5px;
+	transition: rotate var(--timing), translate var(--timing);
+}
+.custom-game-card-hover::before {
+	content: "";
+	position: absolute;
+	border-radius: 5px;
+	inset: 0;
+	z-index: 100;
+	background-image: radial-gradient(circle, transparent -20px, rgba(5, 5, 5, 0.767));
+	opacity: 0;
+	transition: opacity var(--timing);
+}
+.custom-game-card-hover:hover::before {
+	opacity: 1;
+}
+.custom-game-card-hover:hover {
+	rotate: x var(--rotate);
+}
+
+.custom-game-card-hover:hover::after {
+	rotate: x calc(var(--rotate) * -1);
+	translate: 0 60px;
+}
+.custom-game-card-hover span {
+	position: absolute;
+	z-index: 1000;
+	width: 100%;
+	text-align: center;
+	margin-inline: auto;
+	inset: auto 0 2rem;
+	filter: invert(1);
+	transform: translateY(0rem) translateZ(20px);
+	transition: var(--timing);
+}
+.custom-game-card-hover:hover span {
+	transform: translateY(-7rem) translateZ(20px);
+	rotate: x calc(var(--rotate) * -1);
+}
+.custom-mdl {
+	position: absolute;
+	opacity: 0;
+	z-index: 100;
+	scale: 1.15;
+	transform-origin: bottom;
+	transition: var(--timing);
+}
+.custom-game-card-hover:hover .custom-mdl {
+	opacity: 1;
+	transform: translateY(-1rem) translateZ(-10px);
+	rotate: x calc(var(--rotate) * -1);
+}
+
+.custom-game-card-hover p {
+	position: absolute;
+	opacity: 0;
+	z-index: 100;
+	transform-origin: bottom;
+	bottom: 10px;
+	transition: var(--timing);
+	color: white;
+	padding: 0 10px;
+}
+.custom-game-card-hover:hover p {
+	opacity: 1;
+	rotate: x calc(var(--rotate) * -1);
+}
+
+@media screen and (min-width: 500px) {
+	.custom-game-card-hover {
+		width: 350px;
+	}
 }
 
 @media screen and (min-width: 960px) {

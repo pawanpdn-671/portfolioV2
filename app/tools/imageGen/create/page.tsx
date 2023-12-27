@@ -27,7 +27,30 @@ const Page = () => {
 		setForm({ ...form, [name]: value });
 	};
 
-	const handleGenerateImg = () => {};
+	const handleGenerateImg = async () => {
+		// if (form.prompt) {
+		// 	try {
+		// 		setGenerateImg(true);
+		// 		const response = await fetch("https://api.openai.com/v1/images/generations", {
+		// 			method: "POST",
+		// 			headers: {
+		// 				"Content-Type": "application/json",
+		// 				Authorization: `Bearer ${key}`,
+		// 			},
+		// 			body: JSON.stringify({ prompt: form.prompt, n: 2, size: "512x512", response_format: "b64_json" }),
+		// 		});
+		// 		const { data } = await response.json();
+		// 		// setForm({ ...form, photo: `data:image/jpeg;base64,${data.photo}` });
+		// 		console.log(data);
+		// 	} catch (error) {
+		// 		alert(error);
+		// 	} finally {
+		// 		setGenerateImg(false);
+		// 	}
+		// } else {
+		// 	alert("Please enter a prompt");
+		// }
+	};
 
 	const handleSurpriseMe = () => {
 		const randomPrompt = getRandomPrompt(form.prompt);

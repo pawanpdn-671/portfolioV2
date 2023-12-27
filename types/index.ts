@@ -35,3 +35,16 @@ export interface InputFieldProps {
 	isSurpriseMe?: boolean;
 	handleSurpriseMe?: () => void;
 }
+
+export interface GameCardProps {
+	name: string;
+	path: string;
+	desc: string;
+	source: string;
+	mdl: string;
+}
+
+export interface GameProps {
+	key: string;
+	game: GameCardProps;
+}

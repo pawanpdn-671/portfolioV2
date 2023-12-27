@@ -165,3 +165,41 @@ export const surpriseMePrompts = [
 	"A man wanders through the rainy streets of Tokyo, with bright neon signs, 50mm",
 	"A Space Shuttle flying above Cape Town, digital art",
 ];
+
+export const gameList = [
+	{
+		name: "whack-a-mole",
+		path: "/whack-a-mole",
+		desc: " A typical Whac-A-Mole machine consists of a waist-level cabinet with a play area and display screen, and a large, soft mallet.",
+		source: "/assets/images/whackmole-thumbnail.jpg",
+		mdl: "/assets/images/whackamole-mdl.png",
+	},
+	{
+		name: "flappy-bird",
+		path: "/flappy-bird",
+		desc: "Flappy Bird is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.",
+		source: "/assets/images/flappy-thumbnail.jpg",
+		mdl: "/assets/images/flappy-mdl.png",
+	},
+	{
+		name: "candy-crush",
+		path: "/candy-crush",
+		desc: "Candy Crush is game based on swapping two adjacent candies among several on the gameboard to make a row or column of at least three matching-colored candies.",
+		source: "/assets/images/candycrush-thumbnail.jpg",
+		mdl: "/assets/images/candy-crush-mdl.png",
+	},
+	{
+		name: "snake",
+		path: "/snake",
+		desc: "Snake is a sub-genre of action where player must keep the snake from colliding with both other obstacles and itself, which gets harder as the snake lengthens.",
+		source: "/assets/images/snake-thumbnail.jpg",
+		mdl: "/assets/images/snake-mdl.png",
+	},
+	{
+		name: "space-invaders",
+		path: "/space-invaders",
+		desc: "Space Invaders is a Japanese shooting video game released in 1978 by Taito. It was developed by Tomohiro Nishikado, who was inspired by other media: Breakout, The War of the Worlds, and Star Wars.",
+		source: "/assets/images/space-invaders-thumbnail.jpg",
+		mdl: "/assets/images/space-invaders-mdl.png",
+	},
+];
