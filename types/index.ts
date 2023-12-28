@@ -48,3 +48,14 @@ export interface GameProps {
 	key: string;
 	game: GameCardProps;
 }
+
+export interface ToolDetailsProps {
+	name: string;
+	src: string;
+	desc?: string;
+	href: string;
+}
+export interface ToolCardProps {
+	key: number;
+	tool: ToolDetailsProps;
+}

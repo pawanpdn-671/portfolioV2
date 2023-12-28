@@ -102,7 +102,13 @@ export const otherProjects = [
 
 export const about = {
 	title: "Passionately Evolving Code.",
-	desc: "Hi Viewers! My name is Pawan Pradhan. I currently live in East Siang District, Arunachal Pradesh, India. I have studied till my high school, and shortly after that I decided to spend all of my time in Web Development. I started my journey with C programming language as my base, and it really helped me throughout learning Javascript. I'm still on my way to be a great software engineer. My hobbies includes Playing Online Games, Watching Videos and sometimes Badminton. And so that's all about me in a nutshell.",
+	desc: "👋Hi there! I'm Pawan, a passionate frontend developer with a keen eye for creating engaging and intuitive user experiences. My journey in the world of web development began with a curiosity to bring ideas to life through code.",
+	skills:
+		"💻 I specialize in crafting modern, responsive websites and web applications using cutting-edge technologies such as React.js and Nextjs. Proficient in HTML, CSS, and JavaScript, I pay meticulous attention to detail, ensuring pixel-perfect designs and seamless interactions.",
+	sets_apart:
+		"🌟 What sets me apart is my commitment to staying updated with the latest industry trends and technologies. I'm always eager to embrace new challenges and learn new skills to enhance my development toolkit.",
+	connect:
+		"📬 If you're looking for a frontend developer who is not only technically proficient but also passionate about creating beautiful and functional user interfaces, I'd love to connect! Feel free to reach out, and let's embark on exciting projects together.",
 };
 
 export const tools = [
@@ -110,10 +116,12 @@ export const tools = [
 		name: "ImageGen",
 		href: "/tools/imageGen",
 		desc: "ImageGen is a great tool for image generation, powered by AI. Similar to the Midjourney/Dall-e project, it generates images based on text input.",
+		src: "/assets/images/candycrush-thumbnail.jpg",
 	},
 	{
 		name: "ImageGen",
 		href: "/tools/imageGen",
+		src: "/assets/images/candycrush-thumbnail.jpg",
 	},
 ];
 
@@ -169,35 +177,35 @@ export const surpriseMePrompts = [
 export const gameList = [
 	{
 		name: "whack-a-mole",
-		path: "/whack-a-mole",
+		path: "/games/whack-a-mole",
 		desc: " A typical Whac-A-Mole machine consists of a waist-level cabinet with a play area and display screen, and a large, soft mallet.",
 		source: "/assets/images/whackmole-thumbnail.jpg",
 		mdl: "/assets/images/whackamole-mdl.png",
 	},
 	{
 		name: "flappy-bird",
-		path: "/flappy-bird",
+		path: "/games/flappy-bird",
 		desc: "Flappy Bird is a side-scroller where the player controls a bird, attempting to fly between columns of green pipes without hitting them.",
 		source: "/assets/images/flappy-thumbnail.jpg",
 		mdl: "/assets/images/flappy-mdl.png",
 	},
 	{
 		name: "candy-crush",
-		path: "/candy-crush",
+		path: "/games/candy-crush",
 		desc: "Candy Crush is game based on swapping two adjacent candies among several on the gameboard to make a row or column of at least three matching-colored candies.",
 		source: "/assets/images/candycrush-thumbnail.jpg",
 		mdl: "/assets/images/candy-crush-mdl.png",
 	},
 	{
 		name: "snake",
-		path: "/snake",
+		path: "/games/snake",
 		desc: "Snake is a sub-genre of action where player must keep the snake from colliding with both other obstacles and itself, which gets harder as the snake lengthens.",
 		source: "/assets/images/snake-thumbnail.jpg",
 		mdl: "/assets/images/snake-mdl.png",
 	},
 	{
 		name: "space-invaders",
-		path: "/space-invaders",
+		path: "/games/space-invaders",
 		desc: "Space Invaders is a Japanese shooting video game released in 1978 by Taito. It was developed by Tomohiro Nishikado, who was inspired by other media: Breakout, The War of the Worlds, and Star Wars.",
 		source: "/assets/images/space-invaders-thumbnail.jpg",
 		mdl: "/assets/images/space-invaders-mdl.png",

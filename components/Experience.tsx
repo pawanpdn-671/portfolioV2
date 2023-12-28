@@ -14,7 +14,7 @@ const Experience = () => {
 	}, [tabIndex]);
 
 	return (
-		<section className="w-full mt-10 lgl:mt-20 flex flex-col md:flex-row gap-16">
+		<section className="w-full mt-10 lgl:mt-20 min-h-[500px] flex flex-col md:flex-row gap-16">
 			<ul className="flex flex-col shrink-0">
 				{experiences?.map((exp, i) => (
 					<li

@@ -4,38 +4,39 @@ import { about } from "@/constant";
 import AnimatedText from "@/components/AnimatedText";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { SpaceTop } from "@/components/SpaceTop";
+import SectionMotion from "@/components/SectionMotion";
 
 const About = () => {
 	return (
-		<main className="max-w-container mx-auto px-5 mdl:px-20">
-			<div className="py-40">
-				<div className="flex items-center justify-between w-full">
-					<motion.div
-						initial={{ opacity: 0, y: 50 }}
-						animate={{ opacity: 1, y: 0 }}
-						transition={{ duration: 1 }}
-						className="w-1/2 p-10">
-						<Image
-							src={"/assets/images/illus-1.svg"}
-							alt="pawan pradhan"
-							className="w-full h-auto"
-							width={200}
-							height={200}
-						/>
-					</motion.div>
-					<div className="w-1/2 flex flex-col items-center self-center">
-						<AnimatedText text={about.title} className="font-titleFont font-extrabold !text-6xl !text-left" />
-						<motion.p
-							initial={{ opacity: 0, y: 50 }}
-							animate={{ opacity: 1, y: 0 }}
-							transition={{ delay: 1, duration: 0.5 }}
-							className="text-textDark my-4 text-lg font-medium">
-							{about.desc}
-						</motion.p>
+		<MaxWidthWrapper>
+			<div className="min-h-screen">
+				<SpaceTop />
+				<div className="my-20 ">
+					<div className="bg-[url('/assets/images/illus-1.svg')] bg-no-repeat bg-center bg-contain">
+						<div className="bg-bodyColor opacity-[0.85]">
+							<AnimatedText text={about.title} className="font-titleFont font-extrabold !text-6xl !text-left" />
+
+							<div className="mt-10 text-base mdl:text-lg font-medium mdl:font-semibold w-full mdl:w-4/5 text-textLight">
+								<SectionMotion delay={1.1}>
+									<p className="leading-8 my-8">{about.desc}</p>
+								</SectionMotion>
+								<SectionMotion delay={1.2}>
+									<p className="leading-8 my-8 mdl:ml-5">{about.skills}</p>
+								</SectionMotion>
+								<SectionMotion delay={1.3}>
+									<p className="leading-8 my-8 mdl:ml-10">{about.sets_apart}</p>
+								</SectionMotion>
+								<SectionMotion delay={1.4}>
+									<p className="leading-8 my-8 mdl:ml-16">{about.connect}</p>
+								</SectionMotion>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</main>
+		</MaxWidthWrapper>
 	);
 };
 

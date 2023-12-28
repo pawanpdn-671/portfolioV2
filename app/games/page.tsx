@@ -19,7 +19,7 @@ const Games = () => {
 							className="font-titleFont font-bold !text-6xl !text-left"
 						/>
 
-						<SectionMotion delay={1}>
+						<SectionMotion delay={0.7}>
 							<div className="grid grid-cols-1 items-center mdl:grid-cols-2 lg:grid-cols-3 gap-20 my-20">
 								{gameList.map((game, index) => (
 									<GameCard key={game.name} game={game} />
