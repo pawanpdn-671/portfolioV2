@@ -1,14 +1,3 @@
-export const skills = [
-	"Javascript(ES6+)",
-	"ReactJS",
-	"TypeScript",
-	"MongoDB",
-	"NextJS",
-	"NodeJS",
-	"ExpressJS",
-	"Tailwindcss",
-];
-
 export const experiences = [
 	{
 		company: "Innovfide Technologies",

@@ -2,11 +2,10 @@
 import React from "react";
 import { about } from "@/constant";
 import AnimatedText from "@/components/AnimatedText";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { SpaceTop } from "@/components/SpaceTop";
 import SectionMotion from "@/components/SectionMotion";
+import Skills from "@/components/Skills";
 
 const About = () => {
 	return (
@@ -33,6 +32,9 @@ const About = () => {
 								</SectionMotion>
 							</div>
 						</div>
+					</div>
+					<div className="mt-20">
+						<Skills delay={1.5} />
 					</div>
 				</div>
 			</div>

@@ -193,6 +193,99 @@
 	transform-origin: center center;
 }
 
+/* SKILL BOX EFFECT */
+
+.custom-skill-box {
+	width: 100px;
+	height: 100px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	margin: 25px;
+	cursor: pointer;
+}
+
+.custom-skill-box:not(.custom-github-link):hover .custom-skill-box-back {
+	transform: translateZ(100px) rotateX(180deg);
+	background-color: transparent !important;
+}
+.custom-skill-box:not(.custom-github-link):hover .custom-skill-box-face {
+	transform: translateZ(100px) rotateX(180deg);
+	background-color: transparent !important;
+}
+
+.custom-skill-box:not(.custom-github-link):hover > .custom-skill-box-face > .custom-skill-box-text {
+	opacity: 0;
+}
+
+.custom-skill-box.custom-github-link:hover .custom-skill-box-face {
+	background-color: transparent !important;
+}
+
+.custom-skill-box.custom-github-link .custom-skill-box-face {
+	box-sizing: border-box;
+	transition: background-color 0.3s;
+}
+
+.custom-skill-box.custom-github-link .custom-skill-box-text {
+	transition: color 0.3s;
+}
+
+.custom-skill-box.custom-github-link .custom-skill-box-back {
+	display: none;
+}
+.custom-skill-box-face,
+.custom-skill-box-back {
+	position: absolute;
+	top: 0;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	transform: rotate(90deg);
+	transform-style: preserve-3d;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transition: transform 1s, background-color 0s 0.3s;
+}
+
+.custom-skill-box-face .custom-skill-box-text {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	-webkit-transform: rotate(-135deg);
+	-ms-transform: rotate(-135deg);
+	-moz-transform: rotate(-135deg);
+	transform: rotate(-135deg);
+	transition: opacity 0s linear 0.3s;
+}
+
+.custom-skill-box-back .custom-skill-box-text {
+	line-height: 100px;
+	text-align: center;
+	font-size: 16px;
+	font-family: "League Spartan", "sans-serif";
+	-webkit-transform: rotate(-135deg);
+	-ms-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	transform: rotate(-135deg) rotateY(180deg);
+	transition: opacity 0s linear 0.3s;
+}
+
+.custom-skill-box-back {
+	z-index: 0;
+}
+
+.custom-skill-box-text svg {
+	font-size: 32px;
+	opacity: 0.8;
+}
+
 /* CUSTOM RESPONSIVENESS */
 
 @media screen and (min-width: 500px) {

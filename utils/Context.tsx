@@ -8,6 +8,8 @@ interface AppContextProps {
 	scrolled: boolean;
 	loading: boolean;
 	setLoading: React.Dispatch<React.SetStateAction<boolean>>;
+	isLiked: boolean;
+	setIsLiked: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const AppContext = createContext<AppContextProps>({
@@ -16,6 +18,8 @@ export const AppContext = createContext<AppContextProps>({
 	scrolled: false,
 	loading: false,
 	setLoading: () => {},
+	isLiked: false,
+	setIsLiked: () => {},
 });
 
 interface AppProviderProps {
@@ -26,6 +30,7 @@ function AppProvider({ children }: AppProviderProps) {
 	const [theme, setTheme] = useState<string>("");
 	const [scrolled, setScrolled] = useState<boolean>(false);
 	const [loading, setLoading] = useState<boolean>(false);
+	const [isLiked, setIsLiked] = useState<boolean>(false);
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -56,8 +61,25 @@ function AppProvider({ children }: AppProviderProps) {
 		window.addEventListener("scroll", checkScroll);
 	}, [scrolled]);
 
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			const storedLike = localStorage.getItem("portfolio-liked");
+			if (storedLike) {
+				setIsLiked(Boolean(storedLike));
+			}
+		}
+	}, []);
+
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			localStorage.setItem("portfolio-liked", `${isLiked}`);
+		}
+	}, [isLiked]);
+
 	return (
-		<AppContext.Provider value={{ theme, setTheme, scrolled, loading, setLoading }}>{children}</AppContext.Provider>
+		<AppContext.Provider value={{ theme, setTheme, scrolled, loading, setLoading, isLiked, setIsLiked }}>
+			{children}
+		</AppContext.Provider>
 	);
 }
 

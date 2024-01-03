@@ -39,6 +39,10 @@ module.exports = {
 				hoverColor: "rgba(var(--hover-bg-color))",
 				secondColor: "rgba(var(--secondary-color))",
 			},
+			backgroundImage: {
+				"whack-a-mole-bg":
+					"linear-gradient(to bottom, rgba(0, 0, 0,0.3), rgba(0, 0, 0,0.2)), url('/assets/images/game/mario-bg.jpg')",
+			},
 		},
 	},
 	plugins: [],
