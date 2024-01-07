@@ -286,11 +286,20 @@
 	opacity: 0.8;
 }
 
+.custom-candy-img-tile {
+	width: 40px;
+	height: 40px;
+}
+
 /* CUSTOM RESPONSIVENESS */
 
 @media screen and (min-width: 500px) {
 	.custom-game-card-hover {
 		width: 350px;
+	}
+	.custom-candy-img-tile {
+		width: 50px;
+		height: 50px;
 	}
 }
 

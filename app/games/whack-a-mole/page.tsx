@@ -3,11 +3,12 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdOutlineRefresh } from "react-icons/md";
 
-const WhackAMole = () => {
+const Page = () => {
 	const [score, setScore] = useState(0);
 	const [currMole, setCurrMole] = useState(0);
 	const [currPlant, setCurrPlant] = useState(1);
 	const [gameOver, setGameOver] = useState(false);
+	const [disableClick, setDisableClick] = useState(false);
 
 	const getRandomTile = () => {
 		let num = Math.floor(Math.random() * 9);
@@ -16,8 +17,11 @@ const WhackAMole = () => {
 
 	const handleSelectedTile = (tile: number) => {
 		if (gameOver) return;
+		if (disableClick) return;
 		if (tile === currMole) {
 			setScore((prev) => prev + 10);
+			setDisableClick(true);
+			setTimeout(() => setDisableClick(false), 500);
 		} else if (tile === currPlant) {
 			setGameOver(true);
 		}
@@ -81,7 +85,7 @@ const WhackAMole = () => {
 	}, [gameOver]);
 
 	return (
-		<div className="min-h-screen bg-whack-a-mole-bg text-center bg-no-repeat bg-cover bg-right py-10">
+		<div className="min-h-screen select-none bg-whack-a-mole-bg text-center bg-no-repeat bg-cover bg-right py-10">
 			<h1 className="font-gameFont text-3xl md:text-5xl text-bodyColor">Whack A Mole</h1>
 			<div className="mt-5">
 				<h2 className="text-xl md:text-3xl relative h-20 md:h-24 font-bold text-bodyColor">
@@ -95,19 +99,20 @@ const WhackAMole = () => {
 			</div>
 			<div className="mb-4">
 				<div className="w-max mx-auto">
-					<div className="flex justify-between items-center py-4 px-5">
-						<div></div>
-						<div>
-							<button
-								className="flex items-center bg-green-500 hover:bg-green-600 transition-colors duration-150 outline-none py-2 px-4 rounded-lg text-white text-base md:text-lg font-bold md:font-black"
-								onClick={() => {
-									setScore(0);
-									setGameOver(false);
-								}}>
-								<MdOutlineRefresh className="text-xl md:text-2xl mr-1" />
-								Try Again
-							</button>
-						</div>
+					<div className="flex justify-end items-center h-24 px-5">
+						{gameOver && (
+							<div>
+								<button
+									className="flex items-center bg-green-500 hover:bg-green-600 transition-colors duration-150 outline-none py-2 px-4 rounded-lg text-white text-base md:text-lg font-bold md:font-black"
+									onClick={() => {
+										setScore(0);
+										setGameOver(false);
+									}}>
+									<MdOutlineRefresh className="text-xl md:text-2xl mr-1" />
+									Try Again
+								</button>
+							</div>
+						)}
 					</div>
 					<div className="border-[3px] border-white rounded-[25px]">
 						<div className="w-[360px] h-[360px] md:w-[540px] md:h-[540px] lg:w-[810px] lg:h-[810px] bg-[url('/assets/images/game/soil.png')]  flex flex-wrap rounded-[25px] bg-cover">
@@ -120,4 +125,4 @@ const WhackAMole = () => {
 	);
 };
 
-export default WhackAMole;
+export default Page;

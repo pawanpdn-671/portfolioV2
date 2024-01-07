@@ -42,6 +42,9 @@ module.exports = {
 			backgroundImage: {
 				"whack-a-mole-bg":
 					"linear-gradient(to bottom, rgba(0, 0, 0,0.3), rgba(0, 0, 0,0.2)), url('/assets/images/game/mario-bg.jpg')",
+				"flappy-bird-bg": "url('/assets/images/game/flappybirdbg.png')",
+				"candy-crush-bg": "url('/assets/images/game/candy/background.jpg')",
+				"candy-crush-board-bg": "url('/assets/images/game/candy/blank.png')",
 			},
 		},
 	},
