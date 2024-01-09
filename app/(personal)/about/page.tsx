@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import { about } from "@/constant";
 import AnimatedText from "@/components/AnimatedText";
@@ -6,6 +5,16 @@ import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import { SpaceTop } from "@/components/SpaceTop";
 import SectionMotion from "@/components/SectionMotion";
 import Skills from "@/components/Skills";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "About | PawanPdn",
+	description: "Get to know the developer of this Portfolio",
+	icons: [
+		{ rel: "icon", url: "/icon.ico" },
+		{ rel: "apple", url: "/icon.ico" },
+	],
+};
 
 const About = () => {
 	return (

@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import AnimatedText from "@/components/AnimatedText";
 import ProjectCard from "@/components/ProjectCard";
@@ -6,6 +5,16 @@ import { SpaceTop } from "@/components/SpaceTop";
 import { projects } from "@/constant";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import SectionMotion from "@/components/SectionMotion";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Projects | PawanPdn",
+	description: "Checkout what projects, I have developed along the way. Feel Free to follow on",
+	icons: [
+		{ rel: "icon", url: "/icon.ico" },
+		{ rel: "apple", url: "/icon.ico" },
+	],
+};
 
 const page = () => {
 	return (
