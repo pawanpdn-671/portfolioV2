@@ -1,33 +1,31 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { MdOutlineRefresh } from "react-icons/md";
+import "../../../styles/globals.css";
+import useIsMounted from "@/hooks/useIsMounted";
 
 const candies = ["Blue", "Orange", "Green", "Yellow", "Red", "Purple"];
 
 const CandyCrush: React.FC = () => {
 	const [score, setScore] = useState(0);
-	const [moves, setMoves] = useState(50);
-	const [gameOver, setGameOver] = useState(false);
-	let board: any[] = [];
+	const isMounted = useIsMounted();
+	let boardArr: any[] = [];
 	const rows = 9;
 	const columns = 9;
 
 	let currTile: any;
 	let otherTile: any;
+	let start = 1;
 
 	useEffect(() => {
-		const board = document.getElementById("candy-crush-board");
-		let gameInterval: NodeJS.Timeout | undefined;
-		if (!gameOver && board) {
-			board.innerHTML = "";
+		if (isMounted.current && start < 2) {
+			start++;
 			startGame();
 		}
+	}, []);
 
-		if (gameOver && board) {
-			board.innerHTML = "";
-		}
-
-		if (!gameOver) {
+	useEffect(() => {
+		let gameInterval: NodeJS.Timeout | undefined;
+		if (isMounted.current) {
 			gameInterval = setInterval(() => {
 				crushCandy();
 				slideCandy();
@@ -35,19 +33,11 @@ const CandyCrush: React.FC = () => {
 			}, 100);
 		}
 		return () => clearInterval(gameInterval);
-	}, [gameOver]);
-
-	useEffect(() => {
-		if (moves === 0) {
-			setTimeout(() => {
-				setGameOver(true);
-			}, 500);
-		}
-	}, [moves]);
+	}, []);
 
 	const randomCandy = () => candies[Math.floor(Math.random() * candies.length)];
 
-	const startGame = () => {
+	function startGame() {
 		for (let r = 0; r < rows; r++) {
 			const row: any[] = [];
 			for (let c = 0; c < columns; c++) {
@@ -66,9 +56,9 @@ const CandyCrush: React.FC = () => {
 
 				row.push(tile);
 			}
-			board.push(row);
+			boardArr.push(row);
 		}
-	};
+	}
 
 	function dragStart(this: any) {
 		currTile = this;
@@ -119,7 +109,6 @@ const CandyCrush: React.FC = () => {
 				currTile.src = otherImg;
 				otherTile.src = currImg;
 			} else {
-				setMoves((prev) => prev - 1);
 				setScore((prev) => prev + 30);
 			}
 		}
@@ -128,9 +117,9 @@ const CandyCrush: React.FC = () => {
 	function crushThree() {
 		for (let r = 0; r < rows; r++) {
 			for (let c = 0; c < columns - 2; c++) {
-				let candy1 = board[r][c];
-				let candy2 = board[r][c + 1];
-				let candy3 = board[r][c + 2];
+				let candy1 = boardArr[r][c];
+				let candy2 = boardArr[r][c + 1];
+				let candy3 = boardArr[r][c + 2];
 
 				if (candy1.src && candy2.src && candy3.src) {
 					if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
@@ -144,9 +133,9 @@ const CandyCrush: React.FC = () => {
 
 		for (let c = 0; c < columns; c++) {
 			for (let r = 0; r < rows - 2; r++) {
-				let candy1 = board[r][c];
-				let candy2 = board[r + 1][c];
-				let candy3 = board[r + 2][c];
+				let candy1 = boardArr[r][c];
+				let candy2 = boardArr[r + 1][c];
+				let candy3 = boardArr[r + 2][c];
 
 				if (candy1.src && candy2.src && candy3.src) {
 					if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
@@ -166,9 +155,9 @@ const CandyCrush: React.FC = () => {
 	function checkValid() {
 		for (let r = 0; r < rows; r++) {
 			for (let c = 0; c < columns - 2; c++) {
-				let candy1 = board[r][c];
-				let candy2 = board[r][c + 1];
-				let candy3 = board[r][c + 2];
+				let candy1 = boardArr[r][c];
+				let candy2 = boardArr[r][c + 1];
+				let candy3 = boardArr[r][c + 2];
 
 				if (candy1.src && candy2.src && candy3.src) {
 					if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
@@ -180,9 +169,9 @@ const CandyCrush: React.FC = () => {
 
 		for (let c = 0; c < columns; c++) {
 			for (let r = 0; r < rows - 2; r++) {
-				let candy1 = board[r][c];
-				let candy2 = board[r + 1][c];
-				let candy3 = board[r + 2][c];
+				let candy1 = boardArr[r][c];
+				let candy2 = boardArr[r + 1][c];
+				let candy3 = boardArr[r + 2][c];
 
 				if (candy1.src && candy2.src && candy3.src) {
 					if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
@@ -199,52 +188,40 @@ const CandyCrush: React.FC = () => {
 		for (let c = 0; c < columns; c++) {
 			let idx = rows - 1;
 			for (let r = columns - 1; r >= 0; r--) {
-				if (!board[r][c].src.includes("blank")) {
-					board[idx][c].src = board[r][c].src;
+				if (!boardArr[r][c].src.includes("blank")) {
+					boardArr[idx][c].src = boardArr[r][c].src;
 					idx -= 1;
 				}
 			}
 			for (let r = idx; r >= 0; r--) {
-				board[r][c].src = "/assets/images/game/candy/blank.png";
+				boardArr[r][c].src = "/assets/images/game/candy/blank.png";
 			}
 		}
 	}
 
 	function generateCandy() {
 		for (let c = 0; c < columns; c++) {
-			if (board[0][c].src.includes("blank")) {
-				board[0][c].src = "/assets/images/game/candy/" + randomCandy() + ".png";
+			if (boardArr[0][c].src.includes("blank")) {
+				boardArr[0][c].src = "/assets/images/game/candy/" + randomCandy() + ".png";
 			}
 		}
 	}
 
 	return (
 		<div className="bg-candy-crush-bg min-h-screen bg-no-repeat bg-center bg-cover  text-center">
-			<div className="max-w-2xl px-2 mx-auto items-center flex justify-between">
+			<div className="max-w-2xl px-2 mx-auto items-center flex justify-center">
 				<h2 className="my-5 font-gameFont tracking-wide text-xl sml:text-3xl">
 					Score - <span className="text-black">{score}</span>
 				</h2>
-				{gameOver && <span className="text-xl sml:text-3xl font-gameFont text-red-400">Game Over</span>}
-				<div className="block text-2xl font-titleFont tracking-tight text-zinc-50 font-bold">
-					{gameOver ? (
-						<button
-							className="flex items-center bg-green-500 hover:bg-green-600 transition-colors duration-150 outline-none py-1 sml:py-2 px-2 rounded-lg text-white text-base md:text-base font-semibold md:font-black"
-							onClick={() => {
-								setScore(0);
-								setGameOver(false);
-								setMoves(50);
-							}}>
-							<MdOutlineRefresh className="text-lg md:text-xl mr-1" />
-							<span className="mt-1">Try Again</span>
-						</button>
-					) : (
-						<span className="select-none">{moves} turns left</span>
-					)}
-				</div>
 			</div>
 			<div
 				id="candy-crush-board"
 				className="w-[370px] h-[370px] bg-candy-crush-board-bg sml:w-[460px] sml:h-[460px] border-[5px] border-slate-400 mx-auto flex flex-wrap rounded-lg"></div>
+			<p className="mt-4 py-5 text-xl font-gameFont text-center">
+				Controls — Drag and drop candy, to the matching place.
+				<br />
+				Note - Only for PC
+			</p>
 		</div>
 	);
 };

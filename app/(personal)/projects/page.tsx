@@ -21,22 +21,20 @@ const page = () => {
 		<MaxWidthWrapper>
 			<div className="min-h-screen">
 				<SpaceTop />
-				<div className="mt-20"></div>
-				<div className="mt-10">
-					<div>
-						<AnimatedText
-							text="Projects developed along the way..."
-							className="font-titleFont font-bold !text-6xl !text-left"
-						/>
+				<div className="mt-5 mdl:mt-20"></div>
+				<div>
+					<AnimatedText
+						text="Projects developed along the way..."
+						className="font-titleFont font-bold !text-3xl sml:!text-3xl mdl:!text-6xl !text-left"
+					/>
 
-						<SectionMotion delay={1}>
-							<div className="grid grid-cols-1 mdl:grid-cols-2 gap-10 mt-10">
-								{projects?.map((project, index) => (
-									<ProjectCard key={index} project={project} />
-								))}
-							</div>
-						</SectionMotion>
-					</div>
+					<SectionMotion delay={1}>
+						<div className="grid grid-cols-1 mdl:grid-cols-2 gap-10 mt-10">
+							{projects?.map((project, index) => (
+								<ProjectCard key={index} project={project} />
+							))}
+						</div>
+					</SectionMotion>
 				</div>
 				<div className="mt-20">
 					<AnimatedText

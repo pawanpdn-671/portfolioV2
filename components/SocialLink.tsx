@@ -8,26 +8,7 @@ import axios from "axios";
 import { RiLoader3Fill } from "react-icons/ri";
 
 const SocialLink = () => {
-	const { setIsLiked, isLiked } = useContext(AppContext);
-	const [likesCount, setLikesCount] = useState(0);
-	const [likesObjID, setLikesObjID] = useState("");
-	const [loading, setLoading] = useState(false);
-
-	const getLikesCount = async () => {
-		setLoading(true);
-		try {
-			let res = await axios.get("http://localhost:3000/api/likes");
-			let data = res.data;
-
-			setLikesCount(data?.result[0]?.counts);
-			setLikesObjID(data?.result[0]?._id);
-		} catch (error) {
-			console.log(error);
-			return { success: false };
-		} finally {
-			setLoading(false);
-		}
-	};
+	const { setIsLiked, isLiked, setLoading, loading, likesCount, likesObjID, getLikesCount } = useContext(AppContext);
 
 	const handleLikeClick = async () => {
 		if (loading) return;
@@ -39,6 +20,7 @@ const SocialLink = () => {
 			});
 			if (res.data.success) {
 				setIsLiked(!isLiked);
+				localStorage.setItem("portfolio-liked", `${!isLiked}`);
 				getLikesCount();
 			}
 		} catch (err) {
@@ -47,10 +29,6 @@ const SocialLink = () => {
 			setLoading(false);
 		}
 	};
-
-	useEffect(() => {
-		getLikesCount();
-	}, []);
 
 	return (
 		<div className="hidden mdl:block fixed  bottom-0 right-[20px] text-textLight z-50">
@@ -111,7 +89,7 @@ const SocialLink = () => {
 
 export default SocialLink;
 
-const LikeIcon = ({ isLiked }: { isLiked: boolean }) => {
+export const LikeIcon = ({ isLiked, isMobile }: { isLiked: boolean; isMobile?: string }) => {
 	return (
 		<svg
 			stroke="currentColor"
@@ -123,7 +101,7 @@ const LikeIcon = ({ isLiked }: { isLiked: boolean }) => {
 			height="1em"
 			width="1em"
 			xmlns="http://www.w3.org/2000/svg"
-			className={` text-2xl ${
+			className={` text-2xl ${isMobile} ${
 				isLiked ? "text-red-500 group-hover:text-red-600" : "text-textLight group-hover:text-textGreen"
 			} `}
 			color="black">

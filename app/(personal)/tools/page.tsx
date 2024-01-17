@@ -20,13 +20,15 @@ const Page = () => {
 		<MaxWidthWrapper>
 			<div className="min-h-screen">
 				<SpaceTop />
-				<div className="mt-20">
+
+				<div className="mt-5 mdl:mt-20"></div>
+				<div>
 					<AnimatedText
-						text={"Some helpful Tools"}
-						className="font-titleFont font-extrabold !text-6xl !text-left"
+						text="Some helpful tools"
+						className="font-titleFont font-bold !text-3xl sml:!text-3xl mdl:!text-6xl !text-left"
 					/>
 					<SectionMotion delay={0.7}>
-						<div className="mt-10 grid grid-cols-1 mdl:grid-cols-2 gap-20">
+						<div className="mt-10 grid grid-cols-1 mdl:grid-cols-2 gap-10 mdl:gap-20">
 							{tools.map((tool, index) => (
 								<ToolCard key={index} tool={tool} />
 							))}

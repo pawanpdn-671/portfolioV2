@@ -34,32 +34,24 @@ const ToolCard = (props: ToolCardProps) => {
 			className="rounded-md p-[3px] bg-gradient-to-b from-textLight/5 to-textGreen/10 tool-tilt-card"
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}>
-			<div className="rounded-sm bg-bodyColor h-full">
+			<Link href={href} className="rounded-sm bg-bodyColor h-full">
 				<div className="">
 					<Image
 						src={src}
 						alt={"tools thumbnail"}
 						width={500}
 						height={500}
-						className="rounded-t-sm w-full h-80 object-center object-cover"
+						className="rounded-t-sm w-full h-80 object-top object-cover"
 					/>
 				</div>
 
-				<div className="py-4 px-2 ">
-					<div className="text-center h-[150px]">
-						<p className="text-3xl  font-titleFont text-textLight">{name}</p>
-						<p className="mt-4 text-lg font-semibold text-textLight px-2">{desc}</p>
-					</div>
-
-					<div className="mt-10 py-5 text-textDark flex justify-center">
-						<Link href={href}>
-							<div className="flex items-center">
-								<IoOpenSharp className="text-textGreen/50 text-3xl" />
-							</div>
-						</Link>
+				<div className="py-5 mdl:py-10 px-2">
+					<div className="text-center">
+						<p className="text-2xl mdl:text-3xl  font-titleFont text-textLight">{name}</p>
+						<p className="mt-4 text-base mdl:text-lg font-semibold text-textLight px-2">{desc}</p>
 					</div>
 				</div>
-			</div>
+			</Link>
 		</div>
 	);
 };

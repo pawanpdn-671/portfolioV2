@@ -11,6 +11,9 @@ import ThemeToggler from "./ThemeToggler";
 import { useContext } from "react";
 import { AppContext } from "@/utils/Context";
 import MaxWidthWrapper from "./MaxWidthWrapper";
+import { RiLoader3Fill } from "react-icons/ri";
+import { LikeIcon } from "./SocialLink";
+import axios from "axios";
 
 const paths = [
 	{
@@ -53,9 +56,35 @@ const sociallinks = [
 const Navbar = () => {
 	const [showMobileMenu, setShowMobileMenu] = useState(false);
 	const appContext = useContext(AppContext);
-	const { theme, scrolled } = appContext;
+
+	const { theme, scrolled, isLiked, setIsLiked, getLikesCount, loading, setLoading, likesCount, likesObjID } =
+		appContext;
 
 	const pathname = usePathname();
+
+	const handleLikeClick = async () => {
+		if (loading) return;
+		setLoading(true);
+		try {
+			let res = await axios.patch("http://localhost:3000/api/likes", {
+				counts: isLiked ? likesCount - 1 : likesCount + 1,
+				_id: likesObjID,
+			});
+			if (res.data.success) {
+				setIsLiked(!isLiked);
+				localStorage.setItem("portfolio-liked", `${!isLiked}`);
+				getLikesCount();
+			}
+		} catch (err) {
+			console.log(err);
+		} finally {
+			setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		setShowMobileMenu(false);
+	}, [pathname]);
 
 	return (
 		<div className={`fixed w-full bg-transparent ${scrolled ? "h-[72px]" : "h-[84px]"} top-0 z-50 nav-container`}>
@@ -182,6 +211,25 @@ const Navbar = () => {
 										}}
 										className="mt-6">
 										<ThemeToggler />
+									</motion.div>
+									<motion.div
+										initial={{ x: 50, opacity: 0 }}
+										animate={{ x: 0, opacity: 1 }}
+										transition={{ duration: 0.1, delay: 1.5 }}
+										onClick={handleLikeClick}>
+										<span className="mt-8 w-14 h-14 text-xl bg-hoverColor/10 rounded-full inline-flex items-center justify-center hover:text-textGreen cursor-pointer hover:scale-110 transition-all duration-200 group">
+											{loading ? (
+												<RiLoader3Fill className="animate-spin h-6 w-6 text-textLight" />
+											) : (
+												<LikeIcon isLiked={isLiked} isMobile="w-10 h-10" />
+											)}
+										</span>
+										<span
+											className={`-mt-9 ${
+												isLiked ? "text-white" : "text-bodyColor"
+											} block text-center text-sm font-bold`}>
+											{likesCount}
+										</span>
 									</motion.div>
 								</div>
 							</motion.div>

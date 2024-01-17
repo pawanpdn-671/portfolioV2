@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import React, { createContext, ReactNode, useState, useEffect } from "react";
 
 interface AppContextProps {
@@ -10,6 +11,11 @@ interface AppContextProps {
 	setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 	isLiked: boolean;
 	setIsLiked: React.Dispatch<React.SetStateAction<boolean>>;
+	likesCount: number;
+	setLikesCount: React.Dispatch<React.SetStateAction<number>>;
+	likesObjID: string;
+	setLikesObjID: React.Dispatch<React.SetStateAction<string>>;
+	getLikesCount: () => void;
 }
 
 export const AppContext = createContext<AppContextProps>({
@@ -20,6 +26,11 @@ export const AppContext = createContext<AppContextProps>({
 	setLoading: () => {},
 	isLiked: false,
 	setIsLiked: () => {},
+	likesCount: 0,
+	setLikesCount: () => {},
+	likesObjID: "",
+	setLikesObjID: () => {},
+	getLikesCount: () => {},
 });
 
 interface AppProviderProps {
@@ -31,6 +42,24 @@ function AppProvider({ children }: AppProviderProps) {
 	const [scrolled, setScrolled] = useState<boolean>(false);
 	const [loading, setLoading] = useState<boolean>(false);
 	const [isLiked, setIsLiked] = useState<boolean>(false);
+	const [likesCount, setLikesCount] = useState(0);
+	const [likesObjID, setLikesObjID] = useState("");
+
+	const getLikesCount = async () => {
+		setLoading(true);
+		try {
+			let res = await axios.get("http://localhost:3000/api/likes");
+			let data = res.data;
+
+			setLikesCount(data?.result[0]?.counts);
+			setLikesObjID(data?.result[0]?._id);
+		} catch (error) {
+			console.log(error);
+			return { success: false };
+		} finally {
+			setLoading(false);
+		}
+	};
 
 	useEffect(() => {
 		if (typeof window !== "undefined") {
@@ -65,19 +94,31 @@ function AppProvider({ children }: AppProviderProps) {
 		if (typeof window !== "undefined") {
 			const storedLike = localStorage.getItem("portfolio-liked");
 			if (storedLike) {
-				setIsLiked(Boolean(storedLike));
+				setIsLiked(JSON.parse(storedLike));
 			}
 		}
 	}, []);
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			localStorage.setItem("portfolio-liked", `${isLiked}`);
-		}
-	}, [isLiked]);
+		getLikesCount();
+	}, []);
 
 	return (
-		<AppContext.Provider value={{ theme, setTheme, scrolled, loading, setLoading, isLiked, setIsLiked }}>
+		<AppContext.Provider
+			value={{
+				theme,
+				setTheme,
+				scrolled,
+				loading,
+				setLoading,
+				isLiked,
+				setIsLiked,
+				likesCount,
+				likesObjID,
+				setLikesCount,
+				setLikesObjID,
+				getLikesCount,
+			}}>
 			{children}
 		</AppContext.Provider>
 	);

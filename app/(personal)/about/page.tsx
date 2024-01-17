@@ -21,10 +21,13 @@ const About = () => {
 		<MaxWidthWrapper>
 			<div className="min-h-screen">
 				<SpaceTop />
-				<div className="my-20 ">
+				<div className="my-5 mb-20 mdl:my-20">
 					<div className="bg-[url('/assets/images/illus-1.svg')] bg-no-repeat bg-center bg-contain">
 						<div className="bg-bodyColor opacity-[0.85]">
-							<AnimatedText text={about.title} className="font-titleFont font-extrabold !text-6xl !text-left" />
+							<AnimatedText
+								text={about.title}
+								className="font-titleFont font-bold !text-3xl sml:!text-3xl mdl:!text-6xl !text-left"
+							/>
 
 							<div className="mt-10 text-base mdl:text-lg font-medium mdl:font-semibold w-full mdl:w-4/5 text-textLight">
 								<SectionMotion delay={1.1}>

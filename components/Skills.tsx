@@ -79,10 +79,12 @@ const Skills = ({ delay }: { delay: number }) => {
 	return (
 		<section className="flex justify-end">
 			<div className="flex">
-				<div className="flex flex-col ">{mapItems(0, 4)}</div>
-				<div className="flex flex-col mt-[75px] -ml-[75px]">{mapItems(4, 7)}</div>
-				<div className="flex flex-col mt-[150px] -ml-[75px]">{mapItems(7, 9)}</div>
-				<div className="flex flex-col mt-[225px] -ml-[75px]">{mapItems(9, 10, "custom-github-link")}</div>
+				<div className="flex flex-col">{mapItems(0, 4)}</div>
+				<div className="flex flex-col mt-[65px] -ml-[65px] mdl:mt-[75px] mdl:-ml-[75px]">{mapItems(4, 7)}</div>
+				<div className="flex flex-col mt-[130px] -ml-[65px] mdl:mt-[150px] mdl:-ml-[75px]">{mapItems(7, 9)}</div>
+				<div className="flex flex-col mt-[195px] -ml-[65px] mdl:mt-[225px] mdl:-ml-[75px]">
+					{mapItems(9, 10, "custom-github-link")}
+				</div>
 			</div>
 		</section>
 	);

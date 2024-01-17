@@ -13,17 +13,11 @@ const ContactPage = () => {
 							to your message as soon as possible.
 						</p>
 
-						<div className="mt-20 flex flex-col lgl:flex-row gap-5 items-center">
+						<div className="mt-20 ">
 							<a
 								className="email_btn"
 								href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=pawanpradhanpc671@gmail.com">
 								<Button text="Send an email" style={"py-2 px-3 lgl:py-3 lgl:px-5 text-sm lgl:text-[18px]"} />
-							</a>
-
-							<span>OR</span>
-
-							<a className="call_btn" href="tel: +91 6009404703">
-								<Button text="Voice call" style={"py-2 px-3 lgl:py-3 lgl:px-5 text-sm lgl:text-[18px]"} />
 							</a>
 						</div>
 					</div>

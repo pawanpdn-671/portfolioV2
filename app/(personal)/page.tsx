@@ -23,14 +23,14 @@ export default function Home() {
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 0.7 }}
-								className="font-titleFont font-black text-5xl lgl:text-8xl">
+								className="font-titleFont font-black  text-5xl md:text-7xl lgl:text-8xl">
 								Exploring,
 							</motion.h1>
 							<motion.h1
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 0.8 }}
-								className="lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
+								className="lgl:ml-6 font-titleFont font-black text-5xl md:text-7xl lgl:text-8xl">
 								Learning
 							</motion.h1>
 						</div>
@@ -39,14 +39,14 @@ export default function Home() {
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 0.9 }}
-								className="font-titleFont font-black text-5xl lgl:text-8xl">
+								className="font-titleFont font-black text-5xl md:text-7xl lgl:text-8xl">
 								and
 							</motion.h1>
 							<motion.h1
 								initial={{ y: -10, opacity: 0 }}
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 1 }}
-								className="lgl:ml-6 font-titleFont font-black text-5xl lgl:text-8xl">
+								className="lgl:ml-6 font-titleFont font-black text-5xl md:text-7xl lgl:text-8xl">
 								Developing
 							</motion.h1>
 						</div>
@@ -55,7 +55,7 @@ export default function Home() {
 						initial={{ y: -10, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.5, delay: 1.1 }}
-						className="mt-3 lgl:mt-6 text-3xl lgl:text-7xl flex font-bold">
+						className="mt-3 lgl:mt-6 text-3xl md:text-5xl lgl:text-7xl flex font-bold">
 						<span className="h-[3px] mt-4 lgl:mt-9 lgl:h-[5px] bg-textDark w-[30px] lgl:w-[80px] mr-4 lgl:mr-8"></span>
 						Things for the Web
 					</motion.p>

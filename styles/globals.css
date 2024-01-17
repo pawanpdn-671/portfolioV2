@@ -311,3 +311,35 @@
 		transition-delay: 100ms;
 	}
 }
+
+@media screen and (max-width: 768px) {
+	.custom-skill-box {
+		width: 80px;
+		height: 80px;
+	}
+
+	.custom-skill-box-face,
+	.custom-skill-box-back {
+		width: 80px;
+		height: 80px;
+	}
+
+	.custom-skill-box-face .custom-skill-box-text {
+		width: 80px;
+		height: 80px;
+	}
+
+	.custom-skill-box-back .custom-skill-box-text {
+		line-height: 80px;
+		font-size: 14px;
+	}
+
+	.custom-skill-box-back {
+		z-index: 0;
+	}
+
+	.custom-skill-box-text svg {
+		font-size: 24px;
+		opacity: 0.8;
+	}
+}
