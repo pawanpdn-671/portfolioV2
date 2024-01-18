@@ -24,14 +24,16 @@ const Page = () => {
 	var gameOver = false;
 
 	useEffect(() => {
-		document.addEventListener("keyup", startGameHandler);
-		document.addEventListener("keyup", changeDirection);
+		if (typeof window !== "undefined") {
+			document.addEventListener("keyup", startGameHandler);
+			document.addEventListener("keyup", changeDirection);
 
-		startGame();
-		return () => {
-			document.removeEventListener("keyup", startGameHandler);
-			document.removeEventListener("keyup", changeDirection);
-		};
+			startGame();
+			return () => {
+				document.removeEventListener("keyup", startGameHandler);
+				document.removeEventListener("keyup", changeDirection);
+			};
+		}
 	}, [window]);
 
 	useEffect(() => {

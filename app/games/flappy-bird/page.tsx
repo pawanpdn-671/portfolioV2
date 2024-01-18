@@ -47,13 +47,17 @@ const FlappyBird: React.FC = () => {
 	let gameOver = false;
 	let score = 0;
 
-	document.addEventListener("keydown", function (e: KeyboardEvent) {
-		if (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
-			setStartGame(true);
-		}
-	});
+	useEffect(() => {
+		if (typeof window !== "undefined") {
+			document.addEventListener("keydown", function (e: KeyboardEvent) {
+				if (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
+					setStartGame(true);
+				}
+			});
 
-	document.addEventListener("touchstart", () => setStartGame(true));
+			document.addEventListener("touchstart", () => setStartGame(true));
+		}
+	}, [window]);
 
 	useEffect(() => {
 		const canvas = canvasRef.current;

@@ -78,16 +78,18 @@ const Page = () => {
 	}
 
 	useEffect(() => {
-		startGame();
-		document.addEventListener("keydown", moveShip);
-		document.addEventListener("keyup", shoot);
-		document.addEventListener("keyup", startGameHandler);
+		if (typeof window !== "undefined") {
+			startGame();
+			document.addEventListener("keydown", moveShip);
+			document.addEventListener("keyup", shoot);
+			document.addEventListener("keyup", startGameHandler);
 
-		return () => {
-			document.removeEventListener("keydown", moveShip);
-			document.removeEventListener("keyup", shoot);
-			document.removeEventListener("keyup", startGameHandler);
-		};
+			return () => {
+				document.removeEventListener("keydown", moveShip);
+				document.removeEventListener("keyup", shoot);
+				document.removeEventListener("keyup", startGameHandler);
+			};
+		}
 	}, [window]);
 
 	function update() {
