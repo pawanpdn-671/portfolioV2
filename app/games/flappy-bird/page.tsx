@@ -94,7 +94,7 @@ const FlappyBird: React.FC = () => {
 				clearInterval(pipeInterval);
 			};
 		}
-	}, [startGame]);
+	}, [startGame, window]);
 
 	function update() {
 		requestAnimationFrame(update);
