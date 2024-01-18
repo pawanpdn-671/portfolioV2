@@ -1,7 +1,6 @@
 import { Like } from "../../../lib/model/like";
 import mongoose from "mongoose";
-import { NextResponse } from "next/server";
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET() {
 	try {
@@ -13,7 +12,7 @@ export async function GET() {
 	}
 }
 
-export async function PATCH(req: NextApiRequest, res: NextApiResponse) {
+export async function PATCH(req: NextRequest, res: NextResponse) {
 	//@ts-ignore
 	const body = await req.json();
 	const { _id, counts } = body;
