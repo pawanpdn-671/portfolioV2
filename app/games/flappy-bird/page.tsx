@@ -37,8 +37,8 @@ const FlappyBird: React.FC = () => {
 	let pipeX = canvasWidth;
 	let pipeY = 0;
 
-	let topPipeImg = new Image();
-	let bottomPipeImg = new Image();
+	let topPipeImg: HTMLImageElement;
+	let bottomPipeImg: HTMLImageElement;
 
 	let velocityX = -2;
 	let velocityY = 0;
@@ -60,36 +60,40 @@ const FlappyBird: React.FC = () => {
 	}, [window]);
 
 	useEffect(() => {
-		const canvas = canvasRef.current;
-		const context = canvas?.getContext("2d");
+		if (typeof window !== "undefined") {
+			const canvas = canvasRef.current;
+			const context = canvas?.getContext("2d");
 
-		let pipeInterval: NodeJS.Timeout | undefined;
+			let pipeInterval: NodeJS.Timeout | undefined;
 
-		if (canvas && context) {
-			canvas.width = canvasWidth;
-			canvas.height = canvasHeight;
+			if (canvas && context) {
+				canvas.width = canvasWidth;
+				canvas.height = canvasHeight;
 
-			birdImg = new Image();
-			birdImg.src = "/assets/images/game/flappybird.png";
-			birdImg.onload = () => {
-				context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
-			};
+				birdImg = new Image();
+				birdImg.src = "/assets/images/game/flappybird.png";
+				birdImg.onload = () => {
+					context.drawImage(birdImg, bird.x, bird.y, bird.width, bird.height);
+				};
 
-			topPipeImg.src = "/assets/images/game/toppipe.png";
-			bottomPipeImg.src = "/assets/images/game/bottompipe.png";
+				topPipeImg = new Image();
+				bottomPipeImg = new Image();
+				topPipeImg.src = "/assets/images/game/toppipe.png";
+				bottomPipeImg.src = "/assets/images/game/bottompipe.png";
 
-			if (startGame) {
-				requestAnimationFrame(update);
-				pipeInterval = setInterval(placePipes, 1500);
+				if (startGame) {
+					requestAnimationFrame(update);
+					pipeInterval = setInterval(placePipes, 1500);
 
-				document.addEventListener("keydown", moveBird);
-				document.addEventListener("touchstart", touchMoveBird);
+					document.addEventListener("keydown", moveBird);
+					document.addEventListener("touchstart", touchMoveBird);
+				}
 			}
-		}
 
-		return () => {
-			clearInterval(pipeInterval);
-		};
+			return () => {
+				clearInterval(pipeInterval);
+			};
+		}
 	}, [startGame]);
 
 	function update() {
