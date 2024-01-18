@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
-
-import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const Page = () => {
 	var blockSize = 25;
@@ -24,11 +24,20 @@ const Page = () => {
 	var gameOver = false;
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			document.addEventListener("keyup", startGameHandler);
-			startGame();
-		}
+		document.addEventListener("keyup", startGameHandler);
+		document.addEventListener("keyup", changeDirection);
+
+		startGame();
+		return () => {
+			document.removeEventListener("keyup", startGameHandler);
+			document.removeEventListener("keyup", changeDirection);
+		};
 	}, [window]);
+
+	useEffect(() => {
+		let Inter = setInterval(() => update(), 100);
+		return () => clearInterval(Inter);
+	}, []);
 
 	function startGameHandler(e: KeyboardEvent) {
 		if (e.code === "Enter" && gameOver) {
@@ -45,15 +54,11 @@ const Page = () => {
 	}
 
 	function startGame() {
-		window.onload = function () {
-			board = document.getElementById("snake-game-board");
-			board.height = rows * blockSize;
-			board.width = rows * blockSize;
-			context = board.getContext("2d");
-			placeFood();
-			document.addEventListener("keyup", changeDirection);
-			setInterval(() => update(), 1000 / 10);
-		};
+		board = document.getElementById("snake-game-board");
+		board.height = rows * blockSize;
+		board.width = rows * blockSize;
+		context = board.getContext("2d");
+		placeFood();
 	}
 
 	function update() {

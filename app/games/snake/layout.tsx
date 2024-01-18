@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { useRouter } from "next/navigation";
 
 export const metadata: Metadata = {
 	title: "Snake Game | PawanPdn",

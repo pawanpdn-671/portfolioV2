@@ -49,8 +49,8 @@ const Page = () => {
 		if (e.code === "Enter" && gameOver) {
 			gameOver = false;
 			alienCount = 0;
-			alienRows = 1;
-			alienColumns = 2;
+			alienRows = 2;
+			alienColumns = 3;
 			alienArray = [];
 			bulletArray = [];
 			score = -200;
@@ -59,33 +59,35 @@ const Page = () => {
 		}
 	}
 	function startGame() {
-		window.onload = function () {
-			board = document.getElementById("space-invaders-board");
-			board.width = boardWidth;
-			board.height = boardHeight;
-			context = board.getContext("2d");
+		board = document.getElementById("space-invaders-board");
+		board.width = boardWidth;
+		board.height = boardHeight;
+		context = board.getContext("2d");
 
-			shipImg = new Image();
-			shipImg.src = "/assets/images/game/space/ship.png";
-			shipImg.onload = function () {
-				context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
-			};
-
-			alienImg = new Image();
-			alienImg.src = "/assets/images/game/space/alien.png";
-			createAliens();
-
-			requestAnimationFrame(update);
-			document.addEventListener("keydown", moveShip);
-			document.addEventListener("keyup", shoot);
+		shipImg = new Image();
+		shipImg.src = "/assets/images/game/space/ship.png";
+		shipImg.onload = function () {
+			context.drawImage(shipImg, ship.x, ship.y, ship.width, ship.height);
 		};
+
+		alienImg = new Image();
+		alienImg.src = "/assets/images/game/space/alien.png";
+		createAliens();
+
+		requestAnimationFrame(update);
 	}
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
-			startGame();
-			document.addEventListener("keyup", startGameHandler);
-		}
+		startGame();
+		document.addEventListener("keydown", moveShip);
+		document.addEventListener("keyup", shoot);
+		document.addEventListener("keyup", startGameHandler);
+
+		return () => {
+			document.removeEventListener("keydown", moveShip);
+			document.removeEventListener("keyup", shoot);
+			document.removeEventListener("keyup", startGameHandler);
+		};
 	}, [window]);
 
 	function update() {

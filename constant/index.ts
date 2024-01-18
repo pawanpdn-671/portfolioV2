@@ -67,24 +67,17 @@ export const projects = [
 export const otherProjects = [
 	{
 		name: "VroomVibe",
-		techUsed: ["NextJS"],
-		desc: "dffd",
+		techUsed: ["NextJS", "Typescript", "Tailwindcss"],
+		desc: "A landing page for cars manufacturing companies and it’s models.",
 		deployLink: "https://vroom-vibe.vercel.app/",
 		codeLink: "https://github.com/pawanpdn-671/VroomVibe",
 	},
 	{
 		name: "PromptsWorld",
-		techUsed: ["NextJS"],
-		desc: "fdsf",
+		techUsed: ["NextJS", "Mongodb", "Tailwindcss"],
+		desc: "An AI prompting tool where user can discover, create and share creative prompts. ",
 		deployLink: "https://prompts-world.vercel.app/",
 		codeLink: "https://github.com/pawanpdn-671/next-prompt",
-	},
-	{
-		name: "Gamezone",
-		techUsed: ["NextJS"],
-		desc: "fdsd",
-		deployLink: "fdsf",
-		codeLink: "fdsfd",
 	},
 ];
 

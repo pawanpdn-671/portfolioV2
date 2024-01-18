@@ -23,7 +23,7 @@ const About = () => {
 				<SpaceTop />
 				<div className="my-5 mb-20 mdl:my-20">
 					<div className="bg-[url('/assets/images/illus-1.svg')] bg-no-repeat bg-center bg-contain">
-						<div className="bg-bodyColor opacity-[0.85]">
+						<div className="bg-bodyColor opacity-[0.90]">
 							<AnimatedText
 								text={about.title}
 								className="font-titleFont font-bold !text-3xl sml:!text-3xl mdl:!text-6xl !text-left"

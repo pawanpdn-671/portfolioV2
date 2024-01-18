@@ -2,10 +2,11 @@ import React from "react";
 import AnimatedText from "@/components/AnimatedText";
 import ProjectCard from "@/components/ProjectCard";
 import { SpaceTop } from "@/components/SpaceTop";
-import { projects } from "@/constant";
+import { otherProjects, projects } from "@/constant";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import SectionMotion from "@/components/SectionMotion";
 import { Metadata } from "next";
+import OtherProjectCard from "@/components/OtherProjectCard";
 
 export const metadata: Metadata = {
 	title: "Projects | PawanPdn",
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
 const page = () => {
 	return (
 		<MaxWidthWrapper>
-			<div className="min-h-screen">
+			<div className="min-h-screen pb-20">
 				<SpaceTop />
 				<div className="mt-5 mdl:mt-20"></div>
 				<div>
@@ -37,11 +38,19 @@ const page = () => {
 					</SectionMotion>
 				</div>
 				<div className="mt-20">
-					<AnimatedText
-						text="Other noteworthy projects"
-						className="font-titleFont font-bold !text-4xl !text-left"
-					/>
-					<div></div>
+					<SectionMotion delay={1.2}>
+						<AnimatedText
+							text="Other noteworthy projects"
+							className="font-titleFont font-bold !text-2xl mdl:!text-4xl !text-left"
+						/>
+					</SectionMotion>
+					<SectionMotion delay={1.5}>
+						<div className="grid grid-cols-1 mt-5 md:grid-cols-2 gap-5 xl:grid-cols-2">
+							{otherProjects?.map((prj, index) => (
+								<OtherProjectCard key={index} project={prj} />
+							))}
+						</div>
+					</SectionMotion>
 				</div>
 			</div>
 		</MaxWidthWrapper>

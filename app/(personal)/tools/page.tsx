@@ -22,7 +22,7 @@ const Page = () => {
 				<SpaceTop />
 
 				<div className="mt-5 mdl:mt-20"></div>
-				<div>
+				<div className="pb-20">
 					<AnimatedText
 						text="Some helpful tools"
 						className="font-titleFont font-bold !text-3xl sml:!text-3xl mdl:!text-6xl !text-left"

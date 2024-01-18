@@ -24,7 +24,7 @@ const Games = () => {
 							/>
 
 							<SectionMotion delay={0.7}>
-								<div className="max-w-3xl mx-auto grid grid-cols-1 items-center mdl:grid-cols-2 w-[1200px]:grid-cols-3 gap-20 my-20">
+								<div className="grid grid-cols-1 max-w-3xl mx-auto xl:max-w-full items-center mdl:grid-cols-2 xl:grid-cols-3 gap-20 my-20">
 									{gameList.map((game, index) => (
 										<GameCard key={game.name} game={game} />
 									))}

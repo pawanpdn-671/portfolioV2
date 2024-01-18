@@ -1,6 +1,7 @@
 "use client";
 
 import axios from "axios";
+import { usePathname } from "next/navigation";
 import React, { createContext, ReactNode, useState, useEffect } from "react";
 
 interface AppContextProps {
@@ -44,11 +45,12 @@ function AppProvider({ children }: AppProviderProps) {
 	const [isLiked, setIsLiked] = useState<boolean>(false);
 	const [likesCount, setLikesCount] = useState(0);
 	const [likesObjID, setLikesObjID] = useState("");
+	const pathname = usePathname();
 
 	const getLikesCount = async () => {
 		setLoading(true);
 		try {
-			let res = await axios.get("http://localhost:3000/api/likes");
+			let res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/likes`);
 			let data = res.data;
 
 			setLikesCount(data?.result[0]?.counts);
@@ -62,6 +64,7 @@ function AppProvider({ children }: AppProviderProps) {
 	};
 
 	useEffect(() => {
+		console.log(pathname);
 		if (typeof window !== "undefined") {
 			const storedMode = localStorage.getItem("portfolio-theme");
 			if (storedMode) {
@@ -78,7 +81,7 @@ function AppProvider({ children }: AppProviderProps) {
 			document.body.classList.add(theme);
 			localStorage.setItem("portfolio-theme", JSON.stringify(theme));
 		}
-	}, [theme]);
+	}, [theme, pathname]);
 
 	const checkScroll = () => {
 		if (window.scrollY === 0) {

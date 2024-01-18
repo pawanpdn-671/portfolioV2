@@ -66,7 +66,7 @@ const Navbar = () => {
 		if (loading) return;
 		setLoading(true);
 		try {
-			let res = await axios.patch("http://localhost:3000/api/likes", {
+			let res = await axios.patch(`${process.env.NEXT_PUBLIC_URL}/api/likes`, {
 				counts: isLiked ? likesCount - 1 : likesCount + 1,
 				_id: likesObjID,
 			});

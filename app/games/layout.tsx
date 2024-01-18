@@ -1,6 +1,6 @@
 import AppProvider from "@/utils/Context";
-import "../../styles/globals.css";
 import { Metadata } from "next";
+import "../../styles/globals.css";
 
 export const metadata: Metadata = {
 	title: "Games | PawanPdn",

@@ -4,6 +4,7 @@ import Experience from "@/components/Experience";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Home() {
 	return (
@@ -59,7 +60,7 @@ export default function Home() {
 						<span className="h-[3px] mt-4 lgl:mt-9 lgl:h-[5px] bg-textDark w-[30px] lgl:w-[80px] mr-4 lgl:mr-8"></span>
 						Things for the Web
 					</motion.p>
-					<a href="/" className="mt-6 lgl:mt-10 block w-max" target="_blank">
+					<Link href="/projects" className="mt-6 lgl:mt-10 block w-max">
 						<motion.button
 							initial={{ x: -30, opacity: 0 }}
 							animate={{ x: 0, opacity: 1 }}
@@ -67,7 +68,7 @@ export default function Home() {
 							className="px-4 py-2 rounded-md text-textGreen text-[16px] lgl:text-[20px] border border-textGreen hover:bg-hoverColor/10 duration-300">
 							{"<CheckoutProjects />"}
 						</motion.button>
-					</a>
+					</Link>
 				</div>
 			</div>
 
@@ -75,7 +76,7 @@ export default function Home() {
 				<TitleBox title={"Work Experience"} />
 				<Experience />
 			</div>
-			<div className="py-10 lgl:py-24">
+			<div className="py-20 lgl:py-24">
 				<TitleBox title={"Get in Touch"} />
 				<ContactPage />
 			</div>

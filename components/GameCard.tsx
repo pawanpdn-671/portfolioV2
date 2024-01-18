@@ -6,7 +6,7 @@ const GameCard = (props: GameProps) => {
 	const { desc, name, path, source, mdl } = props.game;
 
 	return (
-		<Link href={path}>
+		<Link href={path} className="w-full block">
 			<div className="custom-game-card-hover">
 				<Image className="custom-thumb" src={source} alt={"thumbnail"} width={500} height={500} />
 				<Image className="custom-mdl" src={mdl} alt={"thumbnail"} width={500} height={500} />

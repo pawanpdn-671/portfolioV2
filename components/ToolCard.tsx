@@ -31,10 +31,10 @@ const ToolCard = (props: ToolCardProps) => {
 
 	return (
 		<div
-			className="rounded-md p-[3px] bg-gradient-to-b from-textLight/5 to-textGreen/10 tool-tilt-card"
+			className="rounded-md p-[3px] bg-gradient-to-br from-bodyColor to-textDark/10 tool-tilt-card"
 			onMouseMove={handleMouseMove}
 			onMouseLeave={handleMouseLeave}>
-			<Link href={href} className="rounded-sm bg-bodyColor h-full">
+			<Link href={href} className="rounded-sm block bg-bodyColor h-full">
 				<div className="">
 					<Image
 						src={src}
@@ -47,7 +47,7 @@ const ToolCard = (props: ToolCardProps) => {
 
 				<div className="py-5 mdl:py-10 px-2">
 					<div className="text-center">
-						<p className="text-2xl mdl:text-3xl  font-titleFont text-textLight">{name}</p>
+						<p className="text-2xl mdl:text-3xl font-titleFont text-textLight">{name}</p>
 						<p className="mt-4 text-base mdl:text-lg font-semibold text-textLight px-2">{desc}</p>
 					</div>
 				</div>

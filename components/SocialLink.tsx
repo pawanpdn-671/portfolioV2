@@ -14,7 +14,7 @@ const SocialLink = () => {
 		if (loading) return;
 		setLoading(true);
 		try {
-			let res = await axios.patch("http://localhost:3000/api/likes", {
+			let res = await axios.patch(`${process.env.NEXT_PUBLIC_URL}/api/likes`, {
 				counts: isLiked ? likesCount - 1 : likesCount + 1,
 				_id: likesObjID,
 			});
@@ -31,9 +31,9 @@ const SocialLink = () => {
 	};
 
 	return (
-		<div className="hidden mdl:block fixed  bottom-0 right-[20px] text-textLight z-50">
+		<div className="hidden mdl:block fixed bottom-0 right-[20px] text-textLight z-50">
 			<div className="flex flex-col gap-4">
-				<motion.div
+				<motion.a
 					initial={{ y: -10, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.1, delay: 0.5 }}
@@ -46,7 +46,7 @@ const SocialLink = () => {
 						)}
 					</span>
 					<span className="mt-1 block text-center text-sm text-textLight font-semibold">{likesCount}</span>
-				</motion.div>
+				</motion.a>
 				<motion.a
 					initial={{ y: -10, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
