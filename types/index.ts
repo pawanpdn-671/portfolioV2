@@ -25,17 +25,6 @@ export interface ProjectProps {
 	project: ProjectCardProps;
 }
 
-export interface InputFieldProps {
-	labelName: string;
-	type: string;
-	name: string;
-	placeholder: string;
-	value: string;
-	handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-	isSurpriseMe?: boolean;
-	handleSurpriseMe?: () => void;
-}
-
 export interface GameCardProps {
 	name: string;
 	path: string;
