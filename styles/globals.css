@@ -291,6 +291,19 @@
 	height: 40px;
 }
 
+.blob-container {
+	animation: hideshow 1s 3s ease-in forwards;
+	opacity: 0;
+}
+@keyframes hideshow {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 100%;
+	}
+}
+
 .custom-blob path {
 	animation: blob 50s linear infinite, rot 53s linear infinite;
 }

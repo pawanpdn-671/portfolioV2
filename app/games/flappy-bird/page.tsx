@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 "use client";
+import useIsMounted from "@/hooks/useIsMounted";
 import React, { useEffect, useRef, useState } from "react";
 
 interface PipeType {
@@ -14,6 +15,7 @@ interface PipeType {
 const FlappyBird: React.FC = () => {
 	const canvasRef = useRef<HTMLCanvasElement | null>(null);
 	const [startGame, setStartGame] = useState(false);
+	const isMounted = useIsMounted();
 
 	let canvasWidth = 360;
 	let canvasHeight = 640;
@@ -48,7 +50,7 @@ const FlappyBird: React.FC = () => {
 	let score = 0;
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
+		if (typeof window !== "undefined" && isMounted.current) {
 			document.addEventListener("keydown", function (e: KeyboardEvent) {
 				if (e.code === "Space" || e.code === "ArrowUp" || e.code === "KeyX") {
 					setStartGame(true);
@@ -57,10 +59,10 @@ const FlappyBird: React.FC = () => {
 
 			document.addEventListener("touchstart", () => setStartGame(true));
 		}
-	}, [window]);
+	}, [window, isMounted]);
 
 	useEffect(() => {
-		if (typeof window !== "undefined") {
+		if (typeof window !== "undefined" && isMounted.current) {
 			const canvas = canvasRef.current;
 			const context = canvas?.getContext("2d");
 
@@ -94,7 +96,7 @@ const FlappyBird: React.FC = () => {
 				clearInterval(pipeInterval);
 			};
 		}
-	}, [startGame, window]);
+	}, [startGame, window, isMounted]);
 
 	function update() {
 		requestAnimationFrame(update);

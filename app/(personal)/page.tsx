@@ -73,7 +73,7 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
-			<SectionMotion duration={1} delay={1} fromTop topValue={-100}>
+			<SectionMotion delay={1}>
 				<AnimatedBlob section="hero" />
 				<AnimatedBlob section="hero2" />
 			</SectionMotion>

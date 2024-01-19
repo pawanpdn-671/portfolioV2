@@ -1,7 +1,6 @@
 "use client";
 
 import { AppContext } from "@/utils/Context";
-import Image from "next/image";
 import { useContext } from "react";
 
 const AnimatedBlob = ({ section }: { section: string }) => {
@@ -9,7 +8,7 @@ const AnimatedBlob = ({ section }: { section: string }) => {
 	return (
 		<>
 			{section === "hero" && (
-				<div className=" absolute h-screen max-w-[1280px] top-0 -z-10">
+				<div className="blob-container absolute h-screen max-w-[1280px] top-0 -z-10">
 					<svg
 						className="custom-blob absolute  top-[300px] xl:top-[0%] -left-[500px] sml:-left-[300px] xl:left-[0px] translate-x-[500px] w-[1000px] h-[1000px]"
 						viewBox="0 0 600 600"
@@ -25,7 +24,7 @@ const AnimatedBlob = ({ section }: { section: string }) => {
 				</div>
 			)}
 			{section === "hero2" && (
-				<div className="absolute h-screen w-[800px] lg:w-[1200px] top-0 -z-10">
+				<div className="blob-container absolute h-screen w-[800px] lg:w-[1200px] top-0 -z-10">
 					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
 						<defs>
 							<linearGradient id="fill" x1="0%" y1="0%" x2="100%" y2="0%" gradientTransform="rotate(45 0.5 0.5)">
