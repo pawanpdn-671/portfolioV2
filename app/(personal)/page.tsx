@@ -11,7 +11,7 @@ import Link from "next/link";
 export default function Home() {
 	return (
 		<MaxWidthWrapper>
-			<div className="min-h-screen flex flex-col justify-center">
+			<div className="min-h-screen flex flex-col justify-center relative">
 				<motion.h4
 					initial={{ y: -10, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
@@ -72,11 +72,12 @@ export default function Home() {
 						</motion.button>
 					</Link>
 				</div>
+				<div className="animate-opacity">
+					<AnimatedBlob section="hero" />
+					<AnimatedBlob section="hero2" />
+				</div>
 			</div>
-			<SectionMotion delay={1}>
-				<AnimatedBlob section="hero" />
-				<AnimatedBlob section="hero2" />
-			</SectionMotion>
+
 			<div className="max-w-container mx-auto py-10 lgl:py-24">
 				<SectionMotion delay={1}>
 					<TitleBox title={"Work Experience"} />
