@@ -1,9 +1,10 @@
 import React from "react";
 import Button from "./Button";
+import AnimatedBlob from "./AnimatedBlob";
 
 const ContactPage = () => {
 	return (
-		<section className="max-w-container mx-auto text-textLight">
+		<section className="max-w-container relative mx-auto text-textLight">
 			<div className="mt-20">
 				<div className="flex items-center w-full justify-between ">
 					<div className="contact-info-container">
@@ -22,6 +23,7 @@ const ContactPage = () => {
 					</div>
 				</div>
 			</div>
+			<AnimatedBlob section="contact" />
 		</section>
 	);
 };

@@ -4,6 +4,7 @@ import { experiences } from "@/constant";
 import { TiArrowForward } from "react-icons/ti";
 import { motion } from "framer-motion";
 import { CompanyDetails } from "@/types";
+import AnimatedBlob from "./AnimatedBlob";
 
 const Experience = () => {
 	const [tabIndex, setTabIndex] = useState(0);
@@ -14,7 +15,7 @@ const Experience = () => {
 	}, [tabIndex]);
 
 	return (
-		<section className="w-full mt-10 lgl:mt-20 min-h-[500px] flex flex-col md:flex-row gap-16">
+		<section className="w-full relative mt-10 lgl:mt-20 min-h-[500px] flex flex-col md:flex-row gap-16">
 			<ul className="flex flex-col shrink-0">
 				{experiences?.map((exp, i) => (
 					<li
@@ -52,6 +53,7 @@ const Experience = () => {
 					</ul>
 				</motion.div>
 			)}
+			<AnimatedBlob section="experience" />
 		</section>
 	);
 };

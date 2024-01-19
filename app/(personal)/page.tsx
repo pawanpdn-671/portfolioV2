@@ -1,7 +1,9 @@
 "use client";
+import AnimatedBlob from "@/components/AnimatedBlob";
 import ContactPage from "@/components/Contact";
 import Experience from "@/components/Experience";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import SectionMotion from "@/components/SectionMotion";
 import TitleBox from "@/components/TitleBox";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -71,14 +73,21 @@ export default function Home() {
 					</Link>
 				</div>
 			</div>
-
+			<SectionMotion duration={1} delay={1} fromTop topValue={-100}>
+				<AnimatedBlob section="hero" />
+				<AnimatedBlob section="hero2" />
+			</SectionMotion>
 			<div className="max-w-container mx-auto py-10 lgl:py-24">
-				<TitleBox title={"Work Experience"} />
-				<Experience />
+				<SectionMotion delay={1}>
+					<TitleBox title={"Work Experience"} />
+					<Experience />
+				</SectionMotion>
 			</div>
 			<div className="py-20 lgl:py-24">
-				<TitleBox title={"Get in Touch"} />
-				<ContactPage />
+				<SectionMotion delay={1.1}>
+					<TitleBox title={"Get in Touch"} />
+					<ContactPage />
+				</SectionMotion>
 			</div>
 		</MaxWidthWrapper>
 	);

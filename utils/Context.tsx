@@ -64,7 +64,6 @@ function AppProvider({ children }: AppProviderProps) {
 	};
 
 	useEffect(() => {
-		console.log(pathname);
 		if (typeof window !== "undefined") {
 			const storedMode = localStorage.getItem("portfolio-theme");
 			if (storedMode) {
