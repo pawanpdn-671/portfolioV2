@@ -52,7 +52,7 @@ export const projects = [
 		name: "DigitalTradeHub",
 		techUsed: ["NextJS", "Express", "MongoDB", "Shadcn-UI", "Tailwind", "tRPC", "Payload"],
 		desc: "A full-stack web application where user can buy/sell digital assets. User can explore products and buy them or they can sell with an amount on the platform. Developed with next.js/tailwindcss/shadcn-ui/trpc and stripe webhooks for payment transaction.",
-		deployLink: "https://digitaltradehub.up.railway.app/",
+		deployLink: "https://digitaltradehub-kgsd.onrender.com/",
 		codeLink: "https://github.com/pawanpdn-671/digital-trade-hub",
 	},
 	{
