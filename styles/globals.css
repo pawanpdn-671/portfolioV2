@@ -299,15 +299,11 @@
 		opacity: 100%;
 	}
 }
-.animate-opacity {
-	opacity: 0;
-	animation: animateOp 2s 2s ease-in forwards;
-}
-
 .animate-opacity svg {
 	opacity: 0;
-	animation: animateOp 3s 3s ease-in forwards;
+	animation: animateOp 2s 3s ease-in forwards;
 }
+
 @keyframes animateOp {
 	0% {
 		opacity: 0;
