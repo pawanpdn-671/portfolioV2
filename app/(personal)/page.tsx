@@ -50,7 +50,7 @@ export default function Home() {
 								animate={{ y: 0, opacity: 1 }}
 								transition={{ duration: 0.5, delay: 1 }}
 								className="lgl:ml-6 font-titleFont font-black text-5xl md:text-7xl lgl:text-8xl">
-								Developing
+								Building
 							</motion.h1>
 						</div>
 					</div>
@@ -62,15 +62,6 @@ export default function Home() {
 						<span className="h-[3px] mt-4 lgl:mt-9 lgl:h-[5px] bg-textDark w-[30px] lgl:w-[80px] mr-4 lgl:mr-8"></span>
 						Things for the Web
 					</motion.p>
-					<Link href="/projects" className="mt-6 lgl:mt-10 block w-max">
-						<motion.button
-							initial={{ x: -30, opacity: 0 }}
-							animate={{ x: 0, opacity: 1 }}
-							transition={{ duration: 0.2, delay: 1.2 }}
-							className="px-4 py-2 rounded-md text-textGreen text-[16px] lgl:text-[20px] border border-textGreen hover:bg-hoverColor/10 duration-300">
-							{"<CheckoutProjects />"}
-						</motion.button>
-					</Link>
 				</div>
 				<div className="animate-opacity">
 					<AnimatedBlob section="hero" />

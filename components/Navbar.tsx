@@ -29,10 +29,6 @@ const paths = [
 		path: "/games",
 	},
 	{
-		name: "Tools",
-		path: "/tools",
-	},
-	{
 		name: "About",
 		path: "/about",
 	},

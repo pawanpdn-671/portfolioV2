@@ -16,37 +16,41 @@ export const experiences = [
 		endDate: "30 April 2023",
 		role: "Fullstack Developer",
 		desc: [
-			"Develop, and test UI/UX of the platform",
-			"Collaborate with the team for the requirements and necessary details for the development of the product",
+			"Architected and developed sophisticated analytics dashboards providing critical business insights and data visualization",
+			"Engineered and implemented multiple feature-rich dashboards enabling businesses to track KPIs and make data-driven decisions",
+			"Collaborated with cross-functional teams to design and deliver innovative features enhancing platform capabilities",
+			"Optimized dashboard performance and user experience through efficient data handling and modern UI/UX practices",
 		],
 	},
 	{
-		company: "Intellixio",
+		company: "Contract Work (Intellexio, Meypato, Needle)",
 		startDate: "12 August 2023",
 		endDate: "Current",
 		role: "React Developer",
 		desc: [
-			"Develop and maintain TypingMentor and other client projects.",
-			"Undertake tasks including UX/UI planning, CSS, page speed optimization, API integration, and end-to-end testing.",
-			"Remain available and ready to promptly tackle new tasks as they come up. Note: Task frequency will vary based on project needs.",
+			"Spearheaded entire frontend architecture and development at Meypato, making key technical decisions and establishing best practices",
+			"Led development of Notion automation systems and CRM tools at Needle using Remix.js, improving business workflow efficiency",
+			"Developed and maintained TypingMentor platform at Intellexio, implementing comprehensive frontend solutions",
+			"Engineered user-centric applications with modern tech stack, focusing on performance and scalability",
+			"Orchestrated end-to-end development including UI/UX planning, API integration, and performance optimization",
 		],
 	},
 ];
 
 export const projects = [
 	{
+		name: "StudioSpark",
+		techUsed: ["NextJS 14", "Prisma", "MySQL", "Stripe", "Tailwind", "Shadcn-UI", "Serverless Actions"],
+		desc: "A powerful software tool built for agencies. A SaaS product developed with latest Nextjs 14, with serverless action, MySql(Prisma) and custom stripe integration. Features include media storage, kanban board, notifications, graphs and charts, full website builder, and stripe subscription plans.",
+		deployLink: "https://studiospark.vercel.app/",
+		codeLink: "https://github.com/pawanpdn-671/studio-spark",
+	},
+	{
 		name: "ZenBoard",
 		techUsed: ["NextJS", "Tailwindcss", "Prisma", "Shadcn-UI", "MySQL", "Clerk", "Stripe"],
 		desc: "Zenboard is a full-stack web application where user can buy/sell digital assets. User can explore products and buy them or they can sell with an amount on the platform. Developed with next.js/tailwindcss/shadcn-ui/trpc and stripe webhooks for payment transaction.",
 		deployLink: "https://zenboard-next.vercel.app/",
 		codeLink: "https://github.com/pawanpdn-671/zenBoard",
-	},
-	{
-		name: "PureLodge",
-		techUsed: ["React", "Express", "MongoDB", "Stripe", "Tailwind", "Cloudinary", "E2E Test"],
-		desc: "An express full-stack web application where user can explore staycations. They can also book and add hotel after signing up. It allows you to search and define the place where you would like to visit and many other filters to make you choose the right place.",
-		deployLink: "https://pure-lodge-mern.onrender.com/",
-		codeLink: "https://github.com/pawanpdn-671/pure-lodge-mern",
 	},
 	{
 		name: "DigitalTradeHub",
@@ -66,9 +70,16 @@ export const projects = [
 
 export const otherProjects = [
 	{
+		name: "PureLodge",
+		techUsed: ["React", "Express", "MongoDB", "Stripe", "Tailwind", "Cloudinary", "E2E Test"],
+		desc: "An express full-stack web application where user can explore staycations. They can also book and add hotel after signing up. It allows you to search and define the place where you would like to visit and many other filters to make you choose the right place.",
+		deployLink: "https://pure-lodge-mern.onrender.com/",
+		codeLink: "https://github.com/pawanpdn-671/pure-lodge-mern",
+	},
+	{
 		name: "VroomVibe",
 		techUsed: ["NextJS", "Typescript", "Tailwindcss"],
-		desc: "A landing page for cars manufacturing companies and it’s models.",
+		desc: "A landing page for cars manufacturing companies and it's models.",
 		deployLink: "https://vroom-vibe.vercel.app/",
 		codeLink: "https://github.com/pawanpdn-671/VroomVibe",
 	},
@@ -91,20 +102,6 @@ export const about = {
 	connect:
 		"📬 If you're looking for a frontend developer who is not only technically proficient but also passionate about creating beautiful and functional user interfaces, I'd love to connect! Feel free to reach out, and let's embark on exciting projects together.",
 };
-
-export const tools = [
-	{
-		name: "ZenBoard",
-		href: "https://zenboard-next.vercel.app/",
-		desc: "A task management tool to help you track and manage tasks and activity. It is also mobile friendly app with great accessibility and easier to use. Signup and get started now by clicking below icon.",
-		src: "/assets/images/zenboard.png",
-	},
-	{
-		name: "Coming Soon",
-		href: "#",
-		src: "/",
-	},
-];
 
 export const gameList = [
 	{
